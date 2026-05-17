@@ -1,0 +1,38 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { AnimateIn } from "@/components/ui/AnimateIn";
+import { CTABand } from "@/components/sections/CTABand";
+
+export const metadata: Metadata = {
+  title: "Græsslåning — Silkehave",
+  description: "Regelmæssig slåning, kantklipning og opsamling. Vi tilpasser os din plænes behov og frekvens.",
+};
+
+export default function ServicePage() {
+  return (
+    <div className="pt-24">
+      <div className="mx-auto max-w-4xl px-6 py-16">
+        <AnimateIn>
+          <p className="mb-3 text-xs font-600 uppercase tracking-widest" style={{ color: "var(--color-green)", fontWeight: 600 }}>
+            Ydelse
+          </p>
+          <h1 className="mb-6 text-4xl font-700 leading-tight md:text-5xl" style={{ fontFamily: "var(--font-display), 'Bricolage Grotesque', sans-serif", fontWeight: 700 }}>
+            Græsslåning
+          </h1>
+          <p className="text-xl leading-relaxed" style={{ color: "var(--color-muted)" }}>
+            Regelmæssig slåning, kantklipning og opsamling. Vi tilpasser os din plænes behov og frekvens.
+          </p>
+        </AnimateIn>
+        <AnimateIn delay={0.15} className="mt-10 flex gap-4">
+          <Link href="/kontakt" className="rounded-full px-7 py-3.5 font-600 text-white transition-opacity hover:opacity-90" style={{ fontWeight: 600, background: "var(--color-green)" }}>
+            Få et tilbud
+          </Link>
+          <a href="tel:+4591251021" className="rounded-full border px-7 py-3.5 font-500 transition-all" style={{ fontWeight: 500, borderColor: "rgba(61,107,53,0.25)", color: "var(--color-green-dark)" }}>
+            Ring til os
+          </a>
+        </AnimateIn>
+      </div>
+      <CTABand />
+    </div>
+  );
+}
