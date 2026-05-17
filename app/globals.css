@@ -205,3 +205,14 @@ a:hover { color: var(--forest); text-decoration-thickness: 2px; }
 .scrollvid.is-fallback .scrollvid-pin { position: relative; height: 60vh; }
 .scrollvid.is-fallback .scrollvid-overlay { display: none; }
 @media (prefers-reduced-motion: reduce) { .scrollvid { height: 60vh; } .scrollvid .scrollvid-pin { position: relative; height: 60vh; } .scrollvid .scrollvid-overlay { display: none; } }
+
+/* ---------- Hedge clipper ---------- */
+.stclip { position: relative; }
+.stclip-stage { position: relative; width: 100%; height: 480px; overflow: hidden; background: #1a3a22; }
+.stclip-clean { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; user-select: none; transition: transform 0.08s linear; }
+.stclip-canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; cursor: none; }
+.stclip-hint { position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 8px; padding: 10px 18px; background: rgba(19,52,36,0.72); backdrop-filter: blur(6px); border: 1px solid rgba(255,255,255,0.12); border-radius: var(--radius-pill); color: var(--cream); font-size: 13px; font-weight: 500; letter-spacing: 0.01em; pointer-events: none; white-space: nowrap; transition: opacity 300ms var(--ease-out); }
+.stclip-cursor { position: fixed; top: 0; left: 0; pointer-events: none; z-index: 200; opacity: 0; transform: translate(-50%,-50%); transition: opacity 200ms var(--ease-out); will-change: transform; }
+.stclip-cursor.is-visible { opacity: 1; }
+@media (pointer: coarse) { .stclip-canvas { cursor: crosshair; } .stclip-cursor { display: none; } }
+@media (max-width: 600px) { .stclip-stage { height: 320px; } }

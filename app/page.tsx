@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { CompareSlider } from "@/components/ui/CompareSlider";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
+import { HedgeClipper } from "@/components/ui/HedgeClipper";
 
 export const metadata: Metadata = {
   title: "Silke Total Service — Have‑ og ejendomsservice i Midtjylland",
@@ -98,6 +99,9 @@ export default function HomePage() {
         </div>
         <style>{`.stsg-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-lifted); } @media (max-width: 880px) { .stsg-grid { grid-template-columns: 1fr 1fr !important; } } @media (max-width: 560px) { .stsg-grid { grid-template-columns: 1fr !important; } }`}</style>
       </section>
+
+      {/* ---- Hedge clipper ---- */}
+      <HedgeClipper />
 
       {/* ---- Before / After ---- */}
       <section style={{ padding: "96px 0", background: "var(--ceramic)" }}>
