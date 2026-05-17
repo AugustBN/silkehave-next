@@ -1,87 +1,77 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { AnimateIn } from "@/components/ui/AnimateIn";
-import { CTABand } from "@/components/sections/CTABand";
+import Image from "next/image";
+import { Header } from "@/components/layout/Header";
 
 export const metadata: Metadata = {
-  title: "Om os — Silkehave",
-  description: "Lær os at kende. Silkehave er en lokal have- og ejendomsservice i Silkeborg og omegn.",
+  title: "Om os — Silke Total Service",
+  description: "Et lille, lokalt have‑ og ejendomsservice‑firma i Midtjylland. Vi laver det vi siger, og vi laver det pænt.",
 };
 
 export default function OmOsPage() {
   return (
-    <div className="pt-24">
-      <div className="mx-auto max-w-4xl px-6 py-16">
-        <AnimateIn>
-          <p
-            className="mb-3 text-xs font-600 uppercase tracking-widest"
-            style={{ color: "var(--color-green)", fontWeight: 600 }}
-          >
-            Om os
+    <>
+      <Header isStatic />
+      <section className="page-head">
+        <div className="page-head-inner">
+          <span className="stb-eyebrow">Om os</span>
+          <h1>Et par hænder du<br />kan regne med.</h1>
+          <p>Silke Total Service er et lokalt firma i Midtjylland. Vi laver have‑ og ejendomsservice for både private og boligforeninger — og vi kommer, når vi har sagt det.</p>
+        </div>
+      </section>
+
+      <section className="starticle">
+        <div className="starticle-inner">
+          <div className="team">
+            <Image src="/assets/photos/haek-roekke-ny.jpg" alt="Hækklipning på sagen" width={959} height={1277} />
+            <div>
+              <h2>Hvem vi er</h2>
+              <p>Vi er et lille team med base i Silkeborg-området. Vi har kørt med haveservice og ejendomsservice i Midtjylland i en årrække — det meste arbejde kommer ind via mund-til-mund.</p>
+              <p>Vi tager kun det arbejde vi kan stå inde for. Hellere sige nej end levere noget der ikke er pænt.</p>
+            </div>
+          </div>
+
+          <h2>Sådan arbejder vi</h2>
+          <div className="values">
+            <div className="value"><h3>Fast pris først</h3><p>Du får prisen før vi starter. Ingen overraskelser i bunden af regningen.</p></div>
+            <div className="value"><h3>Aftaler vi holder</h3><p>Vi siger en dag, og vi kommer den dag. Bliver det forsinket, hører du det fra os.</p></div>
+            <div className="value"><h3>Pænt efter os</h3><p>Vi rydder op, fejer og kører grenene væk. Som om vi ikke havde været der.</p></div>
+          </div>
+
+          <h2>Lokal forankring</h2>
+          <p>Vi kører primært i Silkeborg, Viborg, Skanderborg, Herning og opland. Hvis du står lige uden for området — ring og spørg. Vi kan ofte godt komme alligevel.</p>
+
+          <h2>Privat og boligforeninger</h2>
+          <p>Vi laver enkeltopgaver for private — en hækklipning, en omgang fliserens, en sæson med snerydning. Og vi laver faste haveordninger for boligforeninger og ejendomme, hvor det hele kører af sig selv hen over året.</p>
+
+          <p style={{ marginTop: 32 }}>
+            <Link href="/kontakt" className="stb stb-primary">
+              Få et tilbud
+              <span className="stb-icon" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </span>
+            </Link>
           </p>
-          <h1
-            className="mb-6 text-4xl font-700 leading-tight md:text-5xl"
-            style={{ fontFamily: "var(--font-display), 'Bricolage Grotesque', sans-serif", fontWeight: 700 }}
-          >
-            Lokal service,<br />personlig kontakt
-          </h1>
-        </AnimateIn>
+        </div>
+      </section>
 
-        <AnimateIn delay={0.1}>
-          <div className="prose prose-lg max-w-none" style={{ color: "var(--color-muted)" }}>
-            <p className="text-xl leading-relaxed">
-              Silkehave er en lokal have- og ejendomsservice i Silkeborg og omegn. Vi hjælper private og erhverv med alt fra hækklipning og græsslåning til haveordning og snerydning.
-            </p>
-            <p className="mt-6 leading-relaxed">
-              Hos os er det enkelt: du beskriver opgaven, vi giver dig en fast pris — og så sørger vi for resten. Ingen overraskelser på fakturaen, ingen rod bagefter.
-            </p>
-            <p className="mt-6 leading-relaxed">
-              Vi er stolte af det arbejde, vi lægger i, og det kan du se i vores resultater. Tjek vores før- og efter-billeder på forsiden.
-            </p>
+      <section className="stcta">
+        <div className="stcta-inner">
+          <h2>Skal vi kigge forbi?</h2>
+          <p>Ring, eller skriv hvad du har brug for. Vi vender tilbage med en fast pris.</p>
+          <div className="stcta-actions">
+            <Link href="/kontakt" className="stb stb-primary-light">
+              Bestil et besøg
+              <span className="stb-icon" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </span>
+            </Link>
+            <span className="stcta-phone">
+              <Image src="/assets/icon-phone.svg" alt="" width={20} height={20} /> -- -- -- --
+            </span>
           </div>
-        </AnimateIn>
-
-        <AnimateIn delay={0.2} className="mt-16">
-          <div className="grid gap-4 sm:grid-cols-3">
-            {[
-              { value: "47+", label: "Tilfredse kunder" },
-              { value: "3 år", label: "Erfaring" },
-              { value: "Fast pris", label: "Altid" },
-            ].map((s) => (
-              <div
-                key={s.label}
-                className="rounded-xl p-6 text-center"
-                style={{ background: "var(--color-green-light)" }}
-              >
-                <p
-                  className="text-3xl font-700"
-                  style={{ fontFamily: "var(--font-display), 'Bricolage Grotesque', sans-serif", fontWeight: 700, color: "var(--color-green-dark)" }}
-                >
-                  {s.value}
-                </p>
-                <p className="mt-1 text-sm" style={{ color: "var(--color-green)" }}>
-                  {s.label}
-                </p>
-              </div>
-            ))}
-          </div>
-        </AnimateIn>
-
-        <AnimateIn delay={0.3} className="mt-12">
-          <Link
-            href="/kontakt"
-            className="inline-flex items-center gap-2 rounded-full px-7 py-3.5 font-600 text-white transition-opacity hover:opacity-90"
-            style={{ fontWeight: 600, background: "var(--color-green)" }}
-          >
-            Kontakt os
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M5 12h14M12 5l7 7-7 7" />
-            </svg>
-          </Link>
-        </AnimateIn>
-      </div>
-
-      <CTABand />
-    </div>
+        </div>
+      </section>
+    </>
   );
 }

@@ -1,38 +1,76 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { AnimateIn } from "@/components/ui/AnimateIn";
-import { CTABand } from "@/components/sections/CTABand";
+import Image from "next/image";
+import { Header } from "@/components/layout/Header";
 
 export const metadata: Metadata = {
-  title: "Vinduesrens — Silkehave",
-  description: "Rene vinduer ind- og udvendigt. Vi arbejder uden striber og efterlader ingen spor.",
+  title: "Vinduesrens — Silke Total Service",
+  description: "Vinduesrens indvendigt og udvendigt i Midtjylland. Karme tørres af. Ingen striber.",
 };
 
-export default function ServicePage() {
+export default function VinduesrensPage() {
   return (
-    <div className="pt-24">
-      <div className="mx-auto max-w-4xl px-6 py-16">
-        <AnimateIn>
-          <p className="mb-3 text-xs font-600 uppercase tracking-widest" style={{ color: "var(--color-green)", fontWeight: 600 }}>
-            Ydelse
+    <>
+      <Header isStatic />
+
+      <section className="page-head">
+        <div className="page-head-inner">
+          <div className="stb-eyebrow">Ydelse · Ejendom</div>
+          <h1>Vinduesrens,<br />ingen striber.</h1>
+          <p>Indvendigt og udvendigt. Karme og rammer tørres af. Vi arbejder systematisk og efterlader ingen spor.</p>
+        </div>
+      </section>
+
+      <article className="starticle">
+        <div className="starticle-inner">
+
+          <h2>Hvad vi gør</h2>
+          <ul className="check-list">
+            <li>Renser vinduer indvendigt og udvendigt — uden striber.</li>
+            <li>Tørrer karme og rammer af.</li>
+            <li>Arbejder systematisk rum for rum så intet spring over.</li>
+            <li>Rydder op efter os — ingen spande og klude efterladt.</li>
+          </ul>
+
+          <h2>Pris</h2>
+          <p>Fast pris baseret på antal vinduer og etager. Ring eller skriv, så regner vi på det.</p>
+
+          <aside>
+            <h4>Typiske spørgsmål</h4>
+            <p><strong>Kan I nå høje vinduer?</strong><br />Ja. Vi har udstyr til vinduer i 2 etager. Større opgaver aftaler vi individuelt.</p>
+            <p style={{ margin: 0 }}><strong>Hvornår skal vinduer renses?</strong><br />2–4 gange om året er typisk. Foråret og efteråret er de mest populære tidspunkter.</p>
+          </aside>
+
+          <h2>Få en fast pris</h2>
+          <p>Skriv kort hvor du bor og antal vinduer ca. Vi vender tilbage indenfor 1–2 hverdage.</p>
+          <p style={{ marginTop: 24 }}>
+            <Link href="/kontakt" className="stb stb-primary">
+              Send en forespørgsel
+              <span className="stb-icon" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </span>
+            </Link>
           </p>
-          <h1 className="mb-6 text-4xl font-700 leading-tight md:text-5xl" style={{ fontFamily: "var(--font-display), 'Bricolage Grotesque', sans-serif", fontWeight: 700 }}>
-            Vinduesrens
-          </h1>
-          <p className="text-xl leading-relaxed" style={{ color: "var(--color-muted)" }}>
-            Rene vinduer ind- og udvendigt. Vi arbejder uden striber og efterlader ingen spor.
-          </p>
-        </AnimateIn>
-        <AnimateIn delay={0.15} className="mt-10 flex gap-4">
-          <Link href="/kontakt" className="rounded-full px-7 py-3.5 font-600 text-white transition-opacity hover:opacity-90" style={{ fontWeight: 600, background: "var(--color-green)" }}>
-            Få et tilbud
-          </Link>
-          <a href="tel:+4591251021" className="rounded-full border px-7 py-3.5 font-500 transition-all" style={{ fontWeight: 500, borderColor: "rgba(61,107,53,0.25)", color: "var(--color-green-dark)" }}>
-            Ring til os
-          </a>
-        </AnimateIn>
-      </div>
-      <CTABand />
-    </div>
+        </div>
+      </article>
+
+      <section className="stcta">
+        <div className="stcta-inner">
+          <h2>Skal vi kigge forbi?</h2>
+          <p>Ring, eller skriv hvad du har brug for. Vi vender tilbage med en fast pris.</p>
+          <div className="stcta-actions">
+            <Link href="/kontakt" className="stb stb-primary-light">
+              Bestil et besøg
+              <span className="stb-icon" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </span>
+            </Link>
+            <span className="stcta-phone">
+              <Image src="/assets/icon-phone.svg" alt="" width={20} height={20} /> -- -- -- --
+            </span>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }

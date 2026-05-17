@@ -14,33 +14,21 @@ const bricolage = Bricolage_Grotesque({
 const dmSans = DM_Sans({
   subsets: ["latin"],
   variable: "--font-dm-sans",
-  weight: ["400", "500", "600"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Silkehave — Have- og ejendomsservice i Midtjylland",
-  description:
-    "Professionel hækklipning, græsslåning, haveordning og ejendomsservice i Silkeborg og omegn. Fast pris før vi starter.",
-  metadataBase: new URL("https://silkehave.dk"),
-  openGraph: {
-    siteName: "Silkehave",
-    locale: "da_DK",
-    type: "website",
-  },
+  title: "Silke Total Service — Have‑ og ejendomsservice i Midtjylland",
+  description: "Have- og ejendomsservice i Midtjylland. Hækklipning, græsslåning, fliserens og snerydning. Fast pris før vi starter.",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{ children: React.ReactNode }>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html
-      lang="da"
-      className={`${bricolage.variable} ${dmSans.variable}`}
-    >
-      <body className="flex min-h-screen flex-col">
+    <html lang="da" className={`${bricolage.variable} ${dmSans.variable}`}>
+      <body>
         <Header />
-        <main className="flex-1">{children}</main>
+        {children}
         <Footer />
       </body>
     </html>

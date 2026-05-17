@@ -1,38 +1,79 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { AnimateIn } from "@/components/ui/AnimateIn";
-import { CTABand } from "@/components/sections/CTABand";
+import Image from "next/image";
+import { Header } from "@/components/layout/Header";
 
 export const metadata: Metadata = {
-  title: "Haveordning — Silkehave",
-  description: "Ukrudtsbekæmpelse, beskæring og generel havepleje. Vi holder din have velholdt hele sæsonen.",
+  title: "Haveordning — Silke Total Service",
+  description: "Fast haveordning i Midtjylland for private og boligforeninger. Hele sæsonen — uden at du skal tænke på det.",
 };
 
-export default function ServicePage() {
+export default function HaveordningPage() {
   return (
-    <div className="pt-24">
-      <div className="mx-auto max-w-4xl px-6 py-16">
-        <AnimateIn>
-          <p className="mb-3 text-xs font-600 uppercase tracking-widest" style={{ color: "var(--color-green)", fontWeight: 600 }}>
-            Ydelse
+    <>
+      <Header isStatic />
+
+      <section className="page-head">
+        <div className="page-head-inner">
+          <div className="stb-eyebrow">Ydelse · Have</div>
+          <h1>Haveordning,<br />kører af sig selv.</h1>
+          <p>Fast aftale året rundt for private og boligforeninger. Hækklipning, græsslåning, ukrudt og oprydning — du behøver ikke tænke på det.</p>
+        </div>
+      </section>
+
+      <article className="starticle">
+        <div className="starticle-inner">
+
+          <h2>Hvad vi gør</h2>
+          <ul className="check-list">
+            <li>Klipper hæk og slår græs efter fast interval.</li>
+            <li>Fjerner ukrudt i bed og langs kanter.</li>
+            <li>Beskæring af buske og stauder efter behov.</li>
+            <li>Løbende oprydning — blade, grene og affald.</li>
+          </ul>
+
+          <h2>Til hvem</h2>
+          <p>Vi laver haveordninger for private husstande og boligforeninger. Særligt populært hos boligforeninger der vil have ét fast firma til al grøn drift — så slipper bestyrelsen for koordinering.</p>
+
+          <h2>Pris</h2>
+          <p>Fast månedspris eller sæsonpris aftalt ud fra havens størrelse og omfang. Ring eller skriv, så laver vi et tilbud der passer til din situation.</p>
+
+          <aside>
+            <h4>Typiske spørgsmål</h4>
+            <p><strong>Kan vi tilpasse hvad der er med?</strong><br />Ja. Vi sammensætter ordningen ud fra hvad du har brug for — og justerer undervejs.</p>
+            <p style={{ margin: 0 }}><strong>Hvad med vinter?</strong><br />Haveordningen kan inkludere snerydning — så dækker aftalen hele året.</p>
+          </aside>
+
+          <h2>Få en fast pris</h2>
+          <p>Skriv kort hvad du har brug for og hvor du bor. Vi vender tilbage indenfor 1–2 hverdage.</p>
+          <p style={{ marginTop: 24 }}>
+            <Link href="/kontakt" className="stb stb-primary">
+              Send en forespørgsel
+              <span className="stb-icon" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </span>
+            </Link>
           </p>
-          <h1 className="mb-6 text-4xl font-700 leading-tight md:text-5xl" style={{ fontFamily: "var(--font-display), 'Bricolage Grotesque', sans-serif", fontWeight: 700 }}>
-            Haveordning
-          </h1>
-          <p className="text-xl leading-relaxed" style={{ color: "var(--color-muted)" }}>
-            Ukrudtsbekæmpelse, beskæring og generel havepleje. Vi holder din have velholdt hele sæsonen.
-          </p>
-        </AnimateIn>
-        <AnimateIn delay={0.15} className="mt-10 flex gap-4">
-          <Link href="/kontakt" className="rounded-full px-7 py-3.5 font-600 text-white transition-opacity hover:opacity-90" style={{ fontWeight: 600, background: "var(--color-green)" }}>
-            Få et tilbud
-          </Link>
-          <a href="tel:+4591251021" className="rounded-full border px-7 py-3.5 font-500 transition-all" style={{ fontWeight: 500, borderColor: "rgba(61,107,53,0.25)", color: "var(--color-green-dark)" }}>
-            Ring til os
-          </a>
-        </AnimateIn>
-      </div>
-      <CTABand />
-    </div>
+        </div>
+      </article>
+
+      <section className="stcta">
+        <div className="stcta-inner">
+          <h2>Skal vi kigge forbi?</h2>
+          <p>Ring, eller skriv hvad du har brug for. Vi vender tilbage med en fast pris.</p>
+          <div className="stcta-actions">
+            <Link href="/kontakt" className="stb stb-primary-light">
+              Bestil et besøg
+              <span className="stb-icon" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </span>
+            </Link>
+            <span className="stcta-phone">
+              <Image src="/assets/icon-phone.svg" alt="" width={20} height={20} /> -- -- -- --
+            </span>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }

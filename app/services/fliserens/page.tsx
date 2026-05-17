@@ -1,38 +1,76 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { AnimateIn } from "@/components/ui/AnimateIn";
-import { CTABand } from "@/components/sections/CTABand";
+import Image from "next/image";
+import { Header } from "@/components/layout/Header";
 
 export const metadata: Metadata = {
-  title: "Fliserens — Silkehave",
-  description: "Højtryksrens af fliser, indkørsler og terrasser. Fjerner mos, alger og snavs effektivt.",
+  title: "Fliserens — Silke Total Service",
+  description: "Fliserens med højtryk i Midtjylland. Terrassen ser ud som ny — mos, alger og vejsnavs væk.",
 };
 
-export default function ServicePage() {
+export default function FliserensPage() {
   return (
-    <div className="pt-24">
-      <div className="mx-auto max-w-4xl px-6 py-16">
-        <AnimateIn>
-          <p className="mb-3 text-xs font-600 uppercase tracking-widest" style={{ color: "var(--color-green)", fontWeight: 600 }}>
-            Ydelse
+    <>
+      <Header isStatic />
+
+      <section className="page-head">
+        <div className="page-head-inner">
+          <div className="stb-eyebrow">Ydelse · Ejendom</div>
+          <h1>Fliserens,<br />terrassen ser ud som ny.</h1>
+          <p>Højtryk og blødt kemi fjerner mos, alger og vejsnavs. Vi passer på fuger og overflader — og rydder op efter os.</p>
+        </div>
+      </section>
+
+      <article className="starticle">
+        <div className="starticle-inner">
+
+          <h2>Hvad vi gør</h2>
+          <ul className="check-list">
+            <li>Højtryksrenser fliser, indkørsel og terrasse.</li>
+            <li>Bruger blødt kemi til mos og alger — skåner fuger og overflader.</li>
+            <li>Fejer og samler snavset op — intet tilbage på fliserne.</li>
+            <li>Kan behandle med mosforebyggende middel bagefter hvis du vil.</li>
+          </ul>
+
+          <h2>Pris</h2>
+          <p>Fast pris på den konkrete opgave inden vi starter. Den afhænger af areal og grad af tilgroning. Ring eller skriv, så regner vi på det.</p>
+
+          <aside>
+            <h4>Typiske spørgsmål</h4>
+            <p><strong>Kan I rense alle typer fliser?</strong><br />Vi renser beton-, natursten- og teglfliser. Vi bruger det kemi og tryk der passer til overfladen.</p>
+            <p style={{ margin: 0 }}><strong>Hvornår er det bedst at rense?</strong><br />Forår eller efterår. Undgå stærk sol — kemiet virker bedst på fugtig overflade.</p>
+          </aside>
+
+          <h2>Få en fast pris</h2>
+          <p>Skriv kort hvor du bor og ca. areal. Vi vender tilbage indenfor 1–2 hverdage.</p>
+          <p style={{ marginTop: 24 }}>
+            <Link href="/kontakt" className="stb stb-primary">
+              Send en forespørgsel
+              <span className="stb-icon" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </span>
+            </Link>
           </p>
-          <h1 className="mb-6 text-4xl font-700 leading-tight md:text-5xl" style={{ fontFamily: "var(--font-display), 'Bricolage Grotesque', sans-serif", fontWeight: 700 }}>
-            Fliserens
-          </h1>
-          <p className="text-xl leading-relaxed" style={{ color: "var(--color-muted)" }}>
-            Højtryksrens af fliser, indkørsler og terrasser. Fjerner mos, alger og snavs effektivt.
-          </p>
-        </AnimateIn>
-        <AnimateIn delay={0.15} className="mt-10 flex gap-4">
-          <Link href="/kontakt" className="rounded-full px-7 py-3.5 font-600 text-white transition-opacity hover:opacity-90" style={{ fontWeight: 600, background: "var(--color-green)" }}>
-            Få et tilbud
-          </Link>
-          <a href="tel:+4591251021" className="rounded-full border px-7 py-3.5 font-500 transition-all" style={{ fontWeight: 500, borderColor: "rgba(61,107,53,0.25)", color: "var(--color-green-dark)" }}>
-            Ring til os
-          </a>
-        </AnimateIn>
-      </div>
-      <CTABand />
-    </div>
+        </div>
+      </article>
+
+      <section className="stcta">
+        <div className="stcta-inner">
+          <h2>Skal vi kigge forbi?</h2>
+          <p>Ring, eller skriv hvad du har brug for. Vi vender tilbage med en fast pris.</p>
+          <div className="stcta-actions">
+            <Link href="/kontakt" className="stb stb-primary-light">
+              Bestil et besøg
+              <span className="stb-icon" aria-hidden="true">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+              </span>
+            </Link>
+            <span className="stcta-phone">
+              <Image src="/assets/icon-phone.svg" alt="" width={20} height={20} /> -- -- -- --
+            </span>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }
