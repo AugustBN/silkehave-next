@@ -23,7 +23,8 @@ export function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  useEffect(() => setMenuOpen(false), [pathname]);
+  // eslint-disable-next-line react-hooks/set-state-in-effect
+  useEffect(() => { setMenuOpen(false); }, [pathname]);
 
   const isHome = pathname === "/";
   const solid = scrolled || !isHome;
