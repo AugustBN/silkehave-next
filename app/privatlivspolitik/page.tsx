@@ -70,7 +70,7 @@ export default function PrivatlivspolitikPage() {
 
           <aside>
             <h4>Telegram Messenger Inc. — notifikationer</h4>
-            <p>Vi modtager notifikationer om nye forespørgsler via Telegram. Det vil sige at din besked og eventuelle billeder kortvarigt passerer igennem Telegrams servere. Telegram er ikke dækket af EU&apos;s adequacy-afgørelser, men vi bruger dem kun som transportkanal — notifikationerne slettes løbende og data gemmes ikke der.</p>
+            <p>Vi modtager og opbevarer forespørgsler via Telegram. Det vil sige at din besked og eventuelle billeder gemmes på Telegrams servere, hvor vi kan se og besvare dem. Telegram er ikke dækket af EU&apos;s adequacy-afgørelser. Du kan anmode om sletning ved at kontakte os.</p>
           </aside>
 
           <aside>
