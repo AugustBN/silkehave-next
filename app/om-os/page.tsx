@@ -4,7 +4,7 @@ import Image from "next/image";
 import { Header } from "@/components/layout/Header";
 
 export const metadata: Metadata = {
-  title: "Om os — Silke Total Service",
+  title: "Om os — SilkeHave",
   description: "Et lille, lokalt have‑ og ejendomsservice‑firma i Midtjylland. Vi laver det vi siger, og vi laver det pænt.",
 };
 
@@ -16,7 +16,7 @@ export default function OmOsPage() {
         <div className="page-head-inner">
           <span className="stb-eyebrow">Om os</span>
           <h1>Et par hænder du<br />kan regne med.</h1>
-          <p>Silke Total Service er et lokalt firma i Midtjylland. Vi laver have‑ og ejendomsservice for både private og boligforeninger — og vi kommer, når vi har sagt det.</p>
+          <p>SilkeHave er et lokalt firma i Midtjylland. Vi laver have‑ og ejendomsservice for både private og boligforeninger — og vi kommer, når vi har sagt det.</p>
         </div>
       </section>
 

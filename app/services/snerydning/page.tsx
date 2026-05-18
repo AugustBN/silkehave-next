@@ -4,7 +4,7 @@ import Image from "next/image";
 import { Header } from "@/components/layout/Header";
 
 export const metadata: Metadata = {
-  title: "Snerydning — Silke Total Service",
+  title: "Snerydning — SilkeHave",
   description: "Snerydning i Midtjylland. Sæsonaftale eller akut. Saltning og rydning før morgentrafik.",
 };
 

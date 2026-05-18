@@ -19,7 +19,7 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Silke Total Service — Have‑ og ejendomsservice i Midtjylland",
+  title: "SilkeHave — Have‑ og ejendomsservice i Midtjylland",
   description: "Have- og ejendomsservice i Midtjylland. Hækklipning, græsslåning, fliserens og snerydning. Fast pris før vi starter.",
 };
 

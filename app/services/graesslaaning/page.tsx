@@ -4,7 +4,7 @@ import Image from "next/image";
 import { Header } from "@/components/layout/Header";
 
 export const metadata: Metadata = {
-  title: "Græsslåning — Silke Total Service",
+  title: "Græsslåning — SilkeHave",
   description: "Græsslåning i Midtjylland. Ugentligt eller efter behov — vi slår, kanter og rydder op.",
 };
 

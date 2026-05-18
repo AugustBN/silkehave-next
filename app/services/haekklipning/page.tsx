@@ -5,7 +5,7 @@ import { Header } from "@/components/layout/Header";
 import { ScrollVideo } from "@/components/ui/ScrollVideo";
 
 export const metadata: Metadata = {
-  title: "Hækklipning — Silke Total Service",
+  title: "Hækklipning — SilkeHave",
   description: "Hækklipning i Midtjylland. Bøg, liguster, thuja og laurbær. Vi klipper, samler op og kører væk.",
 };
 

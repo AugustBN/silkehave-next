@@ -6,7 +6,7 @@ import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { HedgeClipper } from "@/components/ui/HedgeClipper";
 
 export const metadata: Metadata = {
-  title: "Silke Total Service — Have‑ og ejendomsservice i Midtjylland",
+  title: "SilkeHave — Have‑ og ejendomsservice i Midtjylland",
   description: "Have- og ejendomsservice i Midtjylland. Hækklipning, græsslåning, fliserens og snerydning. Fast pris før vi starter.",
 };
 
@@ -70,6 +70,9 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ---- Hedge clipper ---- */}
+      <HedgeClipper />
+
       {/* ---- Service grid ---- */}
       <section style={{ padding: "96px 0", background: "var(--cream)" }} id="ydelser">
         <div style={{ maxWidth: "var(--container-max)", margin: "0 auto", padding: "0 24px" }}>
@@ -99,9 +102,6 @@ export default function HomePage() {
         </div>
         <style>{`.stsg-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-lifted); } @media (max-width: 880px) { .stsg-grid { grid-template-columns: 1fr 1fr !important; } } @media (max-width: 560px) { .stsg-grid { grid-template-columns: 1fr !important; } }`}</style>
       </section>
-
-      {/* ---- Hedge clipper ---- */}
-      <HedgeClipper />
 
       {/* ---- Before / After ---- */}
       <section style={{ padding: "96px 0", background: "var(--ceramic)" }}>

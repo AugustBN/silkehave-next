@@ -35,7 +35,7 @@ export function Footer() {
         </div>
       </div>
       <div className="stft-base">
-        <span>© Silke Total Service</span>
+        <span>© SilkeHave</span>
         <span>Have‑ og ejendomsservice</span>
       </div>
     </footer>

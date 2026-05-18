@@ -4,7 +4,7 @@ import Image from "next/image";
 import { Header } from "@/components/layout/Header";
 
 export const metadata: Metadata = {
-  title: "Fliserens — Silke Total Service",
+  title: "Fliserens — SilkeHave",
   description: "Fliserens med højtryk i Midtjylland. Terrassen ser ud som ny — mos, alger og vejsnavs væk.",
 };
 

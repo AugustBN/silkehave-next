@@ -4,7 +4,7 @@ import Image from "next/image";
 import { Header } from "@/components/layout/Header";
 
 export const metadata: Metadata = {
-  title: "Haveordning — Silke Total Service",
+  title: "Haveordning — SilkeHave",
   description: "Fast haveordning i Midtjylland for private og boligforeninger. Hele sæsonen — uden at du skal tænke på det.",
 };
 

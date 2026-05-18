@@ -4,7 +4,7 @@ import Image from "next/image";
 import { Header } from "@/components/layout/Header";
 
 export const metadata: Metadata = {
-  title: "Område — Silke Total Service",
+  title: "Område — SilkeHave",
   description: "Vi kører primært i Midtjylland — Silkeborg, Viborg, Skanderborg, Herning og opland.",
 };
 

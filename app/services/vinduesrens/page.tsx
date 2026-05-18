@@ -4,7 +4,7 @@ import Image from "next/image";
 import { Header } from "@/components/layout/Header";
 
 export const metadata: Metadata = {
-  title: "Vinduesrens — Silke Total Service",
+  title: "Vinduesrens — SilkeHave",
   description: "Vinduesrens indvendigt og udvendigt i Midtjylland. Karme tørres af. Ingen striber.",
 };
 

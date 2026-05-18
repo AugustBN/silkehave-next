@@ -5,8 +5,8 @@ import { Header } from "@/components/layout/Header";
 import { QuoteForm } from "./QuoteForm";
 
 export const metadata: Metadata = {
-  title: "Kontakt — Silke Total Service",
-  description: "Få et tilbud fra Silke Total Service. Skriv kort hvad du har brug for, så vender vi tilbage med en fast pris.",
+  title: "Kontakt — SilkeHave",
+  description: "Få et tilbud fra SilkeHave. Skriv kort hvad du har brug for, så vender vi tilbage med en fast pris.",
 };
 
 export default function KontaktPage() {
