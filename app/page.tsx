@@ -188,38 +188,6 @@ export default function HomePage() {
         <style>{`@media (max-width: 880px) { .stas-inner { grid-template-columns: 1fr !important; gap: 32px !important; } }`}</style>
       </section>
 
-      {/* ---- Reviews ---- */}
-      <section style={{ padding: "96px 0", background: "var(--bone)" }}>
-        <div style={{ maxWidth: "var(--container-max)", margin: "0 auto", padding: "0 24px" }}>
-          <div style={{ marginBottom: 40, maxWidth: 640 }}>
-            <span className="stb-eyebrow">Hvad kunder siger</span>
-            <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(28px, 3.5vw, 40px)", fontWeight: 600, color: "var(--forest)", margin: 0, letterSpacing: "-0.015em", lineHeight: 1.1 }}>
-              Lavt drama, fast pris, pænt resultat.
-            </h2>
-          </div>
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16 }} className="strv-grid">
-            {[
-              { quote: "De kom da de havde aftalt, klippede hækken og ryddede pænt op efter sig. Fast pris, ingen overraskelser.", name: "Mette S.", sub: "Privatkunde · Silkeborg" },
-              { quote: "Vi har en haveordning til vores ejendom. Det er bare nemt — de kommer, og det ser pænt ud hele sæsonen.", name: "Boligforening · Viborg", sub: "Erhvervskunde" },
-              { quote: "Fliserne lignede nye bagefter. De viste mig hvad de gjorde, og hvad det kom til at koste, før de begyndte.", name: "Jens P.", sub: "Privatkunde · Ry" },
-            ].map((r) => (
-              <ScrollReveal key={r.name}>
-                <figure style={{ position: "relative", background: "var(--cream)", borderRadius: "var(--radius-lg)", padding: 28, margin: 0, boxShadow: "var(--shadow-card)" }}>
-                  <Image src="/assets/icon-quote.svg" alt="" width={24} height={24} style={{ opacity: 0.35, marginBottom: 12 }} />
-                  <blockquote style={{ fontFamily: "var(--font-sans)", fontSize: 16, lineHeight: 1.55, color: "var(--bark)", margin: "0 0 20px" }}>{r.quote}</blockquote>
-                  <figcaption style={{ display: "flex", flexDirection: "column", gap: 2 }}>
-                    <strong style={{ fontSize: 14, fontWeight: 600, color: "var(--forest)" }}>{r.name}</strong>
-                    <span style={{ fontSize: 13, color: "var(--stone)" }}>{r.sub}</span>
-                  </figcaption>
-                  <span style={{ position: "absolute", top: 16, right: 16, fontSize: 10, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--stone)", background: "var(--ceramic)", padding: "3px 8px", borderRadius: "var(--radius-sm)" }}>eksempel</span>
-                </figure>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-        <style>{`@media (max-width: 880px) { .strv-grid { grid-template-columns: 1fr !important; } }`}</style>
-      </section>
-
       {/* ---- CTA band ---- */}
       <section className="stcta">
         <div className="stcta-inner">
