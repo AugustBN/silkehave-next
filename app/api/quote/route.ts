@@ -1,4 +1,16 @@
+const MAX_BODY_BYTES = 20 * 1024 * 1024; // 20 MB
+
+// Escape Telegram Markdown special chars to prevent injection
+function escMd(s: string): string {
+  return s.replace(/[_*[\]()~`>#+\-=|{}.!\\]/g, "\\$&");
+}
+
 export async function POST(request: Request) {
+  const contentLength = Number(request.headers.get("content-length") ?? 0);
+  if (contentLength > MAX_BODY_BYTES) {
+    return Response.json({ error: "Payload for stor" }, { status: 413 });
+  }
+
   let body: Record<string, unknown>;
   try {
     body = await request.json();
@@ -40,16 +52,16 @@ export async function POST(request: Request) {
   const hasImages = Array.isArray(images) && images.length > 0;
 
   const lines = [
-    "🌿 *Ny forespørgsel — Silkehave*",
+    "🌿 *Ny forespørgsel — SilkeHave*",
     "",
-    `*Navn:* ${name}`,
-    phone ? `*Telefon:* ${phone}` : "*Telefon:* —",
-    `*Email:* ${email}`,
-    `*Adresse:* ${address}`,
+    `*Navn:* ${escMd(String(name))}`,
+    phone ? `*Telefon:* ${escMd(String(phone))}` : "*Telefon:* —",
+    `*Email:* ${escMd(String(email))}`,
+    `*Adresse:* ${escMd(String(address))}`,
     "",
-    `*Ydelser:* ${services || "—"}`,
+    `*Ydelser:* ${services ? escMd(String(services)) : "—"}`,
     "",
-    `*Besked:*\n${message}`,
+    `*Besked:*\n${escMd(String(message))}`,
     hasImages ? `\n_${images!.length} billede${images!.length > 1 ? "r" : ""} vedhæftet_` : "",
     "",
     `_Sendt: ${now}_`,
@@ -63,7 +75,7 @@ export async function POST(request: Request) {
       body: JSON.stringify({
         chat_id: chatId,
         text: lines.join("\n"),
-        parse_mode: "Markdown",
+        parse_mode: "MarkdownV2",
       }),
     }
   );
@@ -75,7 +87,7 @@ export async function POST(request: Request) {
   }
 
   if (hasImages) {
-    for (const b64 of images!.slice(0, 3)) {
+    for (const b64 of images!.slice(0, 4)) {
       try {
         const buffer = Buffer.from(b64, "base64");
         const fd = new FormData();

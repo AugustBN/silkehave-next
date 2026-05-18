@@ -26,7 +26,7 @@ export default function KontaktPage() {
           <div className="kontakt-info">
             <h2>Eller fang os direkte</h2>
             <p>Hvis det er nemmere — skriv på Facebook. Vi svarer typisk samme dag.</p>
-            <a className="kontakt-line" href="https://www.facebook.com/profile.php?id=61574788933190" target="_blank" rel="noopener">
+            <a className="kontakt-line" href="https://www.facebook.com/profile.php?id=61574788933190" target="_blank" rel="noopener noreferrer">
               <Image src="/assets/icon-arrow-right.svg" alt="" width={18} height={18} /> Facebook · silkehave
             </a>
             <Link className="kontakt-line" href="/omraade">

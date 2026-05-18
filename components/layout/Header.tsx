@@ -103,7 +103,7 @@ export function Header({ isStatic = false }: { isStatic?: boolean }) {
           <a
             href="https://www.facebook.com/profile.php?id=61574788933190"
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
             style={{ fontSize: 14, fontWeight: 500, color: solid ? "var(--bark)" : "var(--cream)", textDecoration: "none" }}
           >
             facebook · silkehave

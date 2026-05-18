@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import { Header } from "@/components/layout/Header";
 import { CompareSlider } from "@/components/ui/CompareSlider";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { HedgeClipper } from "@/components/ui/HedgeClipper";
@@ -33,6 +34,7 @@ const towns = ["Silkeborg","Viborg","Skanderborg","Herning","Ikast","Brande","Bj
 export default function HomePage() {
   return (
     <>
+      <Header />
       {/* ---- Hero ---- */}
       <section style={{
         position: "relative",
@@ -113,7 +115,7 @@ export default function HomePage() {
             </h2>
             <p className="lead" style={{ maxWidth: 540, marginTop: 8, fontSize: 18, lineHeight: 1.5 }}>
               Træk i håndtaget — eller lad det selv vise dig, hvad højtryksspuleren gør ved en alm. dansk indkørsel. Følg med i flere før/efter-billeder på{" "}
-              <a href="https://www.facebook.com/profile.php?id=61574788933190" target="_blank" rel="noopener">vores Facebook</a>.
+              <a href="https://www.facebook.com/profile.php?id=61574788933190" target="_blank" rel="noopener noreferrer">vores Facebook</a>.
             </p>
           </div>
 

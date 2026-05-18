@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Bricolage_Grotesque, DM_Sans } from "next/font/google";
 import "./globals.css";
-import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 
 const bricolage = Bricolage_Grotesque({
@@ -20,14 +19,20 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
   title: "SilkeHave — Have‑ og ejendomsservice i Midtjylland",
-  description: "Have- og ejendomsservice i Midtjylland. Hækklipning, græsslåning, fliserens og snerydning. Fast pris før vi starter.",
+  description: "Have- og ejendomsservice i Midtjylland. Hækklipning, fliserens, vinduesrens og snerydning. Fast pris før vi starter.",
+  openGraph: {
+    type: "website",
+    locale: "da_DK",
+    siteName: "SilkeHave",
+    title: "SilkeHave — Have‑ og ejendomsservice i Midtjylland",
+    description: "Lokal have‑ og ejendomsservice i Midtjylland. Fast pris, ingen overraskelser.",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="da" className={`${bricolage.variable} ${dmSans.variable}`}>
       <body>
-        <Header />
         {children}
         <Footer />
       </body>
