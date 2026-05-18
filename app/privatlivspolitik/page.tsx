@@ -65,12 +65,12 @@ export default function PrivatlivspolitikPage() {
 
           <aside>
             <h4>Vercel Inc. — hosting</h4>
-            <p>Sitet kører på Vercel, som er et amerikansk firma. Data overføres til USA under EU's standardkontraktbestemmelser (SCC). Vercel lader IP-adresser passere igennem datacentre i USA som led i DDoS-beskyttelse — det er en teknisk nødvendighed ved at bruge platformen.</p>
+            <p>Sitet kører på Vercel, som er et amerikansk firma. Data overføres til USA under EU&apos;s standardkontraktbestemmelser (SCC). Vercel lader IP-adresser passere igennem datacentre i USA som led i DDoS-beskyttelse — det er en teknisk nødvendighed ved at bruge platformen.</p>
           </aside>
 
           <aside>
             <h4>Telegram Messenger Inc. — notifikationer</h4>
-            <p>Vi modtager notifikationer om nye forespørgsler via Telegram. Det vil sige at din besked og eventuelle billeder kortvarigt passerer igennem Telegrams servere. Telegram er ikke dækket af EU's adequacy-afgørelser, men vi bruger dem kun som transportkanal — notifikationerne slettes løbende og data gemmes ikke der.</p>
+            <p>Vi modtager notifikationer om nye forespørgsler via Telegram. Det vil sige at din besked og eventuelle billeder kortvarigt passerer igennem Telegrams servere. Telegram er ikke dækket af EU&apos;s adequacy-afgørelser, men vi bruger dem kun som transportkanal — notifikationerne slettes løbende og data gemmes ikke der.</p>
           </aside>
 
           <aside>
