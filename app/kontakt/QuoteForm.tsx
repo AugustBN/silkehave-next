@@ -43,6 +43,7 @@ export function QuoteForm() {
   const [previews, setPreviews]   = useState<string[]>([]);
   const [status, setStatus]       = useState<"idle"|"loading"|"done"|"error">("idle");
   const [dragging, setDragging]   = useState(false);
+  const [consented, setConsented] = useState(false);
   const fileRef = useRef<HTMLInputElement>(null);
 
   const toggle = (v: string) =>
@@ -69,6 +70,8 @@ export function QuoteForm() {
     e.preventDefault();
     if (status === "loading") return;
     const fd = new FormData(e.currentTarget);
+    // Honeypot check — bots fill this, humans leave it empty
+    if (fd.get("_gotcha")) return;
     setStatus("loading");
     try {
       const compressed = await Promise.all(images.map(compressImage));
@@ -81,13 +84,14 @@ export function QuoteForm() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          name:     fd.get("name"),
-          phone:    fd.get("phone"),
-          email:    fd.get("email"),
-          address:  fd.get("address"),
-          services: selected.join(", "),
-          message:  fd.get("message"),
-          images:   b64Images,
+          name:             fd.get("name"),
+          phone:            fd.get("phone"),
+          email:            fd.get("email"),
+          address:          fd.get("address"),
+          services:         selected.join(", "),
+          message:          fd.get("message"),
+          images:           b64Images,
+          consentTimestamp: new Date().toISOString(),
         }),
       });
       if (!res.ok) throw new Error("server");
@@ -191,10 +195,29 @@ export function QuoteForm() {
         )}
       </div>
 
-      <p className="stqf-help">Vi bruger kun dine oplysninger til at vende tilbage med et tilbud.</p>
+      {/* Honeypot — hidden from humans, bots fill it in */}
+      <div aria-hidden="true" style={{ position: "absolute", left: "-9999px", opacity: 0, pointerEvents: "none", tabIndex: -1 } as React.CSSProperties}>
+        <label>Lad dette felt stå tomt<input type="text" name="_gotcha" tabIndex={-1} autoComplete="off" /></label>
+      </div>
+
+      <p className="stqf-help">
+        Vi bruger kun dine oplysninger til at vende tilbage med et tilbud.{" "}
+        <a href="/privatlivspolitik" style={{ color: "var(--forest)", textDecoration: "underline" }}>Læs vores privatlivspolitik.</a>
+      </p>
+
+      <label className="stqf-consent">
+        <input
+          type="checkbox"
+          checked={consented}
+          onChange={(e) => setConsented(e.target.checked)}
+          required
+        />
+        Jeg har læst SilkeHaves{" "}
+        <a href="/privatlivspolitik" style={{ color: "var(--forest)", textDecoration: "underline" }}>privatlivspolitik</a>.
+      </label>
 
       <div className="stqf-actions">
-        <button className="stb stb-primary" type="submit" disabled={status === "loading"}>
+        <button className="stb stb-primary" type="submit" disabled={status === "loading" || !consented}>
           {status === "loading" ? "Sender…" : "Send forespørgsel"}
           <span className="stb-icon" aria-hidden="true">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>

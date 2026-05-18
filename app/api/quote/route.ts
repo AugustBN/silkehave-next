@@ -20,7 +20,7 @@ export async function POST(request: Request) {
     return Response.json({ error: "Ugyldig JSON" }, { status: 400 });
   }
 
-  const { name, phone, email, address, services, message, images } = body as {
+  const { name, phone, email, address, services, message, images, consentTimestamp } = body as {
     name?: string;
     phone?: string;
     email?: string;
@@ -28,6 +28,7 @@ export async function POST(request: Request) {
     services?: string;
     message?: string;
     images?: string[];
+    consentTimestamp?: string;
   };
 
   if (!name || !email || !address || !message) {
@@ -67,6 +68,7 @@ export async function POST(request: Request) {
     hasImages ? `\n_${images!.length} billede${images!.length > 1 ? "r" : ""} vedhæftet_` : "",
     "",
     `_Sendt: ${escMd(now)}_`,
+    consentTimestamp ? `_Samtykke til privatlivspolitik: JA — ${escMd(consentTimestamp)}_` : "",
   ].filter((l) => l !== undefined);
 
   const msgResp = await fetch(
