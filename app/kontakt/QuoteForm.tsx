@@ -35,7 +35,24 @@ function compressImage(file: File): Promise<string> {
   });
 }
 
-const MAX_PAYLOAD_B64 = 3_500_000; // ~3.5 MB base64 — stays under Vercel's 4.5 MB limit
+const MAX_PAYLOAD_B64 = 3_500_000;
+
+function getErrors(
+  fd: FormData,
+  selectedServices: string[],
+  consented: boolean,
+): Record<string, string> {
+  const errs: Record<string, string> = {};
+  if (!String(fd.get("name") ?? "").trim()) errs.name = "Skriv dit navn";
+  const email = String(fd.get("email") ?? "").trim();
+  const phone = String(fd.get("phone") ?? "").trim();
+  if (!email && !phone) errs.contact = "Udfyld mindst e-mail eller telefonnummer";
+  if (!String(fd.get("address") ?? "").trim()) errs.address = "Skriv din adresse eller by";
+  if (!String(fd.get("message") ?? "").trim()) errs.message = "Beskriv kort din opgave";
+  if (selectedServices.length === 0) errs.services = "Vælg mindst én ydelse";
+  if (!consented) errs.consent = "Sæt hak i privatlivspolitikken for at sende";
+  return errs;
+}
 
 export function QuoteForm() {
   const [selected, setSelected]   = useState<string[]>([]);
@@ -44,10 +61,16 @@ export function QuoteForm() {
   const [status, setStatus]       = useState<"idle"|"loading"|"done"|"error">("idle");
   const [dragging, setDragging]   = useState(false);
   const [consented, setConsented] = useState(false);
+  const [errors, setErrors]       = useState<Record<string, string>>({});
   const fileRef = useRef<HTMLInputElement>(null);
 
-  const toggle = (v: string) =>
+  const clearError = (key: string) =>
+    setErrors((prev) => { const e = { ...prev }; delete e[key]; return e; });
+
+  const toggle = (v: string) => {
     setSelected((p) => p.includes(v) ? p.filter((x) => x !== v) : [...p, v]);
+    clearError("services");
+  };
 
   const addFiles = (files: FileList | null) => {
     if (!files) return;
@@ -70,8 +93,19 @@ export function QuoteForm() {
     e.preventDefault();
     if (status === "loading") return;
     const fd = new FormData(e.currentTarget);
-    // Honeypot check — bots fill this, humans leave it empty
     if (fd.get("_gotcha")) return;
+
+    const errs = getErrors(fd, selected, consented);
+    if (Object.keys(errs).length > 0) {
+      setErrors(errs);
+      requestAnimationFrame(() => {
+        document.querySelector<HTMLElement>(".stqf-error")
+          ?.scrollIntoView({ behavior: "smooth", block: "center" });
+      });
+      return;
+    }
+
+    setErrors({});
     setStatus("loading");
     try {
       const compressed = await Promise.all(images.map(compressImage));
@@ -117,7 +151,7 @@ export function QuoteForm() {
       <p>Det tager 1 minut. Du forpligter dig ikke til noget.</p>
 
       <label>Hvad har du brug for? <span>(vælg én eller flere)</span></label>
-      <div className="stqf-services">
+      <div className={`stqf-services${errors.services ? " stqf-services--err" : ""}`}>
         {SERVICES.map((s) => (
           <span
             key={s.value}
@@ -133,18 +167,25 @@ export function QuoteForm() {
           </span>
         ))}
       </div>
+      {errors.services && <p className="stqf-error">{errors.services}</p>}
 
       <div className="stqf-row">
-        <label>Navn<input type="text" name="name" required /></label>
-        <label>Telefon <span>(valgfrit)</span><input type="tel" name="phone" /></label>
+        <label>Navn<input type="text" name="name" onChange={() => clearError("name")} /></label>
+        <label>Telefon <span>(valgfrit)</span><input type="tel" name="phone" onChange={() => clearError("contact")} /></label>
       </div>
+      {errors.name && <p className="stqf-error">{errors.name}</p>}
 
-      <label>E-mail<input type="email" name="email" required /></label>
-      <label>Adresse / by<input type="text" name="address" placeholder="F.eks. Silkeborg" required /></label>
+      <label>E-mail<input type="email" name="email" onChange={() => clearError("contact")} /></label>
+      {errors.contact && <p className="stqf-error">{errors.contact}</p>}
+
+      <label>Adresse / by<input type="text" name="address" placeholder="F.eks. Silkeborg" onChange={() => clearError("address")} /></label>
+      {errors.address && <p className="stqf-error">{errors.address}</p>}
+
       <label>
         Kort om opgaven
-        <textarea name="message" placeholder="F.eks.: 30 m bøgehæk, ca. 2 m høj, ligger ud mod villavej." required />
+        <textarea name="message" placeholder="F.eks.: 30 m bøgehæk, ca. 2 m høj, ligger ud mod villavej." onChange={() => clearError("message")} />
       </label>
+      {errors.message && <p className="stqf-error">{errors.message}</p>}
 
       {/* Image upload */}
       <div style={{ marginBottom: 14 }}>
@@ -209,15 +250,15 @@ export function QuoteForm() {
         <input
           type="checkbox"
           checked={consented}
-          onChange={(e) => setConsented(e.target.checked)}
-          required
+          onChange={(e) => { setConsented(e.target.checked); clearError("consent"); }}
         />
         Jeg har læst SilkeHaves{" "}
         <a href="/privatlivspolitik" style={{ color: "var(--forest)", textDecoration: "underline" }}>privatlivspolitik</a>.
       </label>
+      {errors.consent && <p className="stqf-error">{errors.consent}</p>}
 
       <div className="stqf-actions">
-        <button className="stb stb-primary" type="submit" disabled={status === "loading" || !consented}>
+        <button className="stb stb-primary" type="submit" disabled={status === "loading"}>
           {status === "loading" ? "Sender…" : "Send forespørgsel"}
           <span className="stb-icon" aria-hidden="true">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>

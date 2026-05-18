@@ -65,8 +65,8 @@ export async function POST(request: Request) {
     consentTimestamp?: string;
   };
 
-  // Field validation
-  if (!name || !email || !address || !message) {
+  // Field validation — require name, at least email or phone, address, message
+  if (!name || (!email && !phone) || !address || !message) {
     return Response.json({ error: "Mangler påkrævede felter" }, { status: 400 });
   }
   if (String(name).length > 200 || String(email).length > 200 ||
@@ -105,7 +105,7 @@ export async function POST(request: Request) {
     "",
     `*Navn:* ${escMd(String(name))}`,
     phone ? `*Telefon:* ${escMd(String(phone))}` : "*Telefon:* —",
-    `*Email:* ${escMd(String(email))}`,
+    email ? `*Email:* ${escMd(String(email))}` : "*Email:* —",
     `*Adresse:* ${escMd(String(address))}`,
     "",
     `*Ydelser:* ${services ? escMd(String(services)) : "—"}`,
