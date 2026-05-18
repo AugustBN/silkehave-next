@@ -12,7 +12,7 @@ const SERVICES = [
   { value: "Andet",       icon: "/assets/icon-mappin.svg"       },
 ];
 
-const MAX_IMAGES = 15;
+const MAX_IMAGES = 20;
 
 function compressImage(file: File): Promise<string> {
   return new Promise((resolve, reject) => {
