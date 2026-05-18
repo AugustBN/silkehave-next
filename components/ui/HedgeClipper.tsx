@@ -1,8 +1,9 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export function HedgeClipper() {
+  const [isTouch, setIsTouch] = useState(false);
   const stageRef     = useRef<HTMLDivElement>(null);
   const canvasRef    = useRef<HTMLCanvasElement>(null);
   const cursorRef    = useRef<HTMLDivElement>(null);
@@ -10,6 +11,11 @@ export function HedgeClipper() {
   const hintRef      = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    if (window.matchMedia("(pointer: coarse)").matches) {
+      setIsTouch(true);
+      return;
+    }
+
     if (!stageRef.current || !canvasRef.current) return;
     const clipStage: HTMLDivElement     = stageRef.current;
     const canvas:    HTMLCanvasElement  = canvasRef.current;
@@ -254,7 +260,7 @@ export function HedgeClipper() {
       const ro = new ResizeObserver(resize);
       ro.observe(clipStage);
     };
-    untrimmedImg.src = "/assets/photos/haek-ikke-klippet.png";
+    untrimmedImg.src = "/assets/photos/haek-ikke-klippet-sm.png";
 
     return () => {
       stopSnipping();
@@ -264,6 +270,22 @@ export function HedgeClipper() {
     };
   }, []);
 
+  if (isTouch) {
+    return (
+      <section className="stclip">
+        <div className="stclip-stage">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            className="stclip-clean"
+            src="/assets/photos/haek-klippet.jpg"
+            alt="Klippet hæk"
+            draggable={false}
+          />
+        </div>
+      </section>
+    );
+  }
+
   return (
     <>
       <section className="stclip">
@@ -271,7 +293,7 @@ export function HedgeClipper() {
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             className="stclip-clean"
-            src="/assets/photos/haek-klippet.png"
+            src="/assets/photos/haek-klippet.jpg"
             alt="Klippet hæk"
             draggable={false}
           />

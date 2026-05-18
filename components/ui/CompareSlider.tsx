@@ -142,12 +142,12 @@ export function CompareSlider({ before, after }: CompareSliderProps) {
       }}
     >
       {/* After layer (bottom) */}
-      <Image src={after.src} alt={after.alt} fill style={{ objectFit: "cover", pointerEvents: "none" }} draggable={false} sizes="100vw" />
+      <Image src={after.src} alt={after.alt} fill style={{ objectFit: "cover", pointerEvents: "none" }} draggable={false} sizes="(max-width: 1200px) 100vw, 1200px" />
       <span style={{ position: "absolute", top: 16, right: 16, background: "var(--forest)", color: "var(--cream)", fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", padding: "6px 12px", borderRadius: 999, zIndex: 3, pointerEvents: "none" }}>Efter</span>
 
       {/* Before layer (clipped) */}
       <div style={{ position: "absolute", inset: 0, clipPath: `inset(0 ${100 - pos}% 0 0)`, isolation: "isolate" }}>
-        <Image src={before.src} alt={before.alt} fill style={{ objectFit: "cover", pointerEvents: "none" }} draggable={false} sizes="100vw" />
+        <Image src={before.src} alt={before.alt} fill style={{ objectFit: "cover", pointerEvents: "none" }} draggable={false} sizes="(max-width: 1200px) 100vw, 1200px" />
         <span style={{ position: "absolute", top: 16, left: 16, background: "rgba(245,241,232,0.95)", color: "var(--bark)", fontFamily: "var(--font-sans)", fontWeight: 700, fontSize: 11, letterSpacing: "0.12em", textTransform: "uppercase", padding: "6px 12px", borderRadius: 999, backdropFilter: "blur(4px)", zIndex: 3, pointerEvents: "none" }}>Før</span>
       </div>
 

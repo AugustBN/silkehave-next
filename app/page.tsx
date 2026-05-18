@@ -42,11 +42,16 @@ export default function HomePage() {
         display: "flex",
         alignItems: "center",
         backgroundColor: "var(--moss-deep)",
-        backgroundImage: "linear-gradient(180deg, rgba(31,58,44,0.30) 0%, rgba(31,58,44,0.55) 55%, rgba(31,58,44,0.85) 100%), url('/assets/photos/terrasse-parasol.jpg')",
-        backgroundSize: "cover, cover",
-        backgroundPosition: "50% 45%, 50% 45%",
-        backgroundRepeat: "no-repeat, no-repeat",
       }}>
+        <Image
+          src="/assets/photos/terrasse-parasol.jpg"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          style={{ objectFit: "cover", objectPosition: "50% 45%" }}
+        />
+        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(31,58,44,0.30) 0%, rgba(31,58,44,0.55) 55%, rgba(31,58,44,0.85) 100%)" }} />
         <div style={{ position: "relative", maxWidth: "var(--container-max)", margin: "0 auto", padding: "120px 24px 64px", color: "var(--cream)", width: "100%" }}>
           <span className="stb-eyebrow" style={{ color: "rgba(245,241,232,0.8)" }}>Have‑ og ejendomsservice · Midtjylland</span>
           <h1 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(36px, 7vw, 80px)", fontWeight: 600, letterSpacing: "-0.02em", lineHeight: 1.04, maxWidth: 800, margin: "0 0 20px", color: "var(--cream)" }}>
@@ -132,6 +137,7 @@ export default function HomePage() {
                   alt={p.caption}
                   width={600}
                   height={800}
+                  sizes="(max-width: 560px) 50vw, (max-width: 880px) 33vw, 200px"
                   style={{ aspectRatio: "3/4", objectFit: "cover", width: "100%", borderRadius: "var(--radius-md)", marginBottom: 8 }}
                   loading="lazy"
                 />
