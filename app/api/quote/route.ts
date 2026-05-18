@@ -91,7 +91,7 @@ export async function POST(request: Request) {
   // Send photos in the background — don't make the user wait
   if (hasImages) {
     after(async () => {
-      for (const b64 of images!.slice(0, 4)) {
+      for (const b64 of images!.slice(0, 15)) {
         try {
           const buffer = Buffer.from(b64, "base64");
           const fd = new FormData();
