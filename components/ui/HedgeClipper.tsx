@@ -1,9 +1,8 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
 export function HedgeClipper() {
-  const [isTouch, setIsTouch] = useState(false);
   const stageRef     = useRef<HTMLDivElement>(null);
   const canvasRef    = useRef<HTMLCanvasElement>(null);
   const cursorRef    = useRef<HTMLDivElement>(null);
@@ -11,10 +10,8 @@ export function HedgeClipper() {
   const hintRef      = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (window.matchMedia("(pointer: coarse)").matches) {
-      setIsTouch(true);
-      return;
-    }
+    // Skip canvas setup on touch devices — CSS hides canvas/cursor, stclip-clean shows static image
+    if (window.matchMedia("(pointer: coarse)").matches) return;
 
     if (!stageRef.current || !canvasRef.current) return;
     const clipStage: HTMLDivElement     = stageRef.current;
@@ -269,22 +266,6 @@ export function HedgeClipper() {
       particleCanvas.remove();
     };
   }, []);
-
-  if (isTouch) {
-    return (
-      <section className="stclip">
-        <div className="stclip-stage">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            className="stclip-clean"
-            src="/assets/photos/haek-klippet.jpg"
-            alt="Klippet hæk"
-            draggable={false}
-          />
-        </div>
-      </section>
-    );
-  }
 
   return (
     <>
