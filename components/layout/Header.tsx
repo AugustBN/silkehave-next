@@ -77,8 +77,8 @@ export function Header({ isStatic = false }: { isStatic?: boolean }) {
             </svg>
           </span>
           <span style={{ display: "inline-flex", flexDirection: "column", lineHeight: 1.05, color: solid ? "var(--forest)" : "var(--cream)" }}>
-            <span style={{ fontFamily: "var(--font-display, 'Bricolage Grotesque')", fontSize: 22, fontWeight: 700, letterSpacing: "-0.02em" }}>Silke</span>
-            <span style={{ fontFamily: "var(--font-sans)", fontSize: 10, fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", opacity: 0.85, marginTop: 2 }}>Total Service</span>
+            <span style={{ fontFamily: "var(--font-display, 'Bricolage Grotesque')", fontSize: 22, fontWeight: 700, letterSpacing: "-0.02em" }}>SilkeHave</span>
+            <span style={{ fontFamily: "var(--font-sans)", fontSize: 10, fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", opacity: 0.85, marginTop: 2 }}>Have &amp; Ejendomsservice</span>
           </span>
         </Link>
 
