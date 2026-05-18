@@ -26,7 +26,7 @@ export default function PrivatlivspolitikPage() {
           <p>
             SilkeHave er ansvarlig for behandlingen af dine personoplysninger.<br />
             CVR: 46370325<br />
-            Adresse: [FIRMAADRESSE]<br />
+            Adresse: C/O Alexander, Buskelundengen 98, 8600 Silkeborg<br />
             Mail: <a href="mailto:kontaktsilkehave@gmail.com">kontaktsilkehave@gmail.com</a><br />
             Tlf.: <a href="tel:+4591251021">+45 91 25 10 21</a>
           </p>
