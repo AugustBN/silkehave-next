@@ -20,7 +20,7 @@ function compressImage(file: File): Promise<string> {
     const url = URL.createObjectURL(file);
     img.onload = () => {
       URL.revokeObjectURL(url);
-      const MAX = 1200;
+      const MAX = 800;
       const scale = Math.min(1, MAX / Math.max(img.width, img.height));
       const w = Math.round(img.width * scale);
       const h = Math.round(img.height * scale);
@@ -28,12 +28,14 @@ function compressImage(file: File): Promise<string> {
       canvas.width = w;
       canvas.height = h;
       canvas.getContext("2d")!.drawImage(img, 0, 0, w, h);
-      resolve(canvas.toDataURL("image/jpeg", 0.82).split(",")[1]);
+      resolve(canvas.toDataURL("image/jpeg", 0.72).split(",")[1]);
     };
     img.onerror = reject;
     img.src = url;
   });
 }
+
+const MAX_PAYLOAD_B64 = 3_500_000; // ~3.5 MB base64 — stays under Vercel's 4.5 MB limit
 
 export function QuoteForm() {
   const [selected, setSelected]   = useState<string[]>([]);
@@ -69,7 +71,12 @@ export function QuoteForm() {
     const fd = new FormData(e.currentTarget);
     setStatus("loading");
     try {
-      const b64Images = await Promise.all(images.map(compressImage));
+      const compressed = await Promise.all(images.map(compressImage));
+      let total = 0;
+      const b64Images = compressed.filter((b64) => {
+        total += b64.length;
+        return total <= MAX_PAYLOAD_B64;
+      });
       const res = await fetch("/api/quote", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
