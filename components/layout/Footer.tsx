@@ -22,6 +22,7 @@ export function Footer() {
           <Link href="/om-os">Om os</Link>
           <Link href="/omraade">Område</Link>
           <Link href="/kontakt">Kontakt</Link>
+          <Link href="/privatlivspolitik">Privatlivspolitik</Link>
         </div>
         <div className="stft-col">
           <h4>Kontakt</h4>
