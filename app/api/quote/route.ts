@@ -64,7 +64,7 @@ export async function POST(request: Request) {
     `*Besked:*\n${escMd(String(message))}`,
     hasImages ? `\n_${images!.length} billede${images!.length > 1 ? "r" : ""} vedhæftet_` : "",
     "",
-    `_Sendt: ${now}_`,
+    `_Sendt: ${escMd(now)}_`,
   ].filter((l) => l !== undefined);
 
   const msgResp = await fetch(
