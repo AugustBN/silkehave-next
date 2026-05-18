@@ -32,9 +32,12 @@ export default function KontaktPage() {
             <Link className="kontakt-line" href="/omraade">
               <Image src="/assets/icon-mappin.svg" alt="" width={18} height={18} /> Midtjylland · se område
             </Link>
-            <span className="kontakt-line">
-              <Image src="/assets/icon-phone.svg" alt="" width={18} height={18} /> -- -- -- --
-            </span>
+            <a className="kontakt-line" href="tel:+4591251021">
+              <Image src="/assets/icon-phone.svg" alt="" width={18} height={18} /> +45 91 25 10 21
+            </a>
+            <a className="kontakt-line" href="mailto:kontaktsilkehave@gmail.com">
+              <Image src="/assets/icon-mail.svg" alt="" width={18} height={18} /> kontaktsilkehave@gmail.com
+            </a>
 
             <h2 style={{ marginTop: 40 }}>Hvad sker der nu?</h2>
             <p style={{ marginBottom: 8 }}><strong>1.</strong> Vi læser hvad du har skrevet.</p>
