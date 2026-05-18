@@ -11,12 +11,12 @@ export const metadata: Metadata = {
 };
 
 const services = [
-  { icon: "/assets/icon-haveordning.svg",   title: "Haveordning",  body: "Fast aftale året rundt — vi holder haven, så du ikke skal tænke på det." },
-  { icon: "/assets/icon-haekklipning.svg",  title: "Hækklipning",  body: "Bøg, liguster, thuja. Vi klipper, samler op og kører væk." },
-  { icon: "/assets/icon-graesslaaning.svg", title: "Græsslåning",  body: "Ugentligt eller efter behov. Kanter med, hvis du vil have det." },
-  { icon: "/assets/icon-fliserens.svg",     title: "Fliserens",    body: "Højtryk og blødt kemi. Terrassen ser ud som ny igen." },
-  { icon: "/assets/icon-vinduesrens.svg",   title: "Vinduesrens",  body: "Indvendigt og udvendigt. Karme tørres af. Ingen striber." },
-  { icon: "/assets/icon-snerydning.svg",    title: "Snerydning",   body: "Sæsonaftale eller akut. Saltning og rydning før morgentrafik." },
+  { icon: "/assets/icon-haveordning.svg",  title: "Haveordning",  body: "Fast aftale året rundt — vi holder haven, så du ikke skal tænke på det.",         href: "/services/haveordning" },
+  { icon: "/assets/icon-haekklipning.svg", title: "Hækklipning",  body: "Bøg, liguster, thuja. Vi klipper, samler op og kører væk.",                       href: "/services/haekklipning" },
+  { icon: "/assets/icon-fliserens.svg",    title: "Fliserens",    body: "Højtryk og blødt kemi. Terrassen ser ud som ny igen.",                             href: "/services/fliserens" },
+  { icon: "/assets/icon-vinduesrens.svg",  title: "Vinduesrens",  body: "Indvendigt og udvendigt. Karme tørres af. Ingen striber.",                         href: "/services/vinduesrens" },
+  { icon: "/assets/icon-snerydning.svg",   title: "Snerydning",   body: "Sæsonaftale eller akut. Saltning og rydning før morgentrafik.",                    href: "/services/snerydning" },
+  { icon: "/assets/icon-mappin.svg",       title: "Andet?",       body: "Har du en opgave der ikke passer i boksene? Skriv til os — vi kigger på det.",     href: "/kontakt" },
 ];
 
 const strip = [
@@ -88,7 +88,7 @@ export default function HomePage() {
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 16 }} className="stsg-grid">
             {services.map((s, i) => (
               <ScrollReveal key={s.title} delay={i * 0.07}>
-                <Link href="/service" style={{ display: "block", background: "var(--bone)", borderRadius: "var(--radius-lg)", padding: 28, boxShadow: "var(--shadow-card)", textDecoration: "none", color: "var(--bark)", transition: "transform 240ms cubic-bezier(0.22,1,0.36,1), box-shadow 240ms cubic-bezier(0.22,1,0.36,1)" }}
+                <Link href={s.href} style={{ display: "block", background: "var(--bone)", borderRadius: "var(--radius-lg)", padding: 28, boxShadow: "var(--shadow-card)", textDecoration: "none", color: "var(--bark)", transition: "transform 240ms cubic-bezier(0.22,1,0.36,1), box-shadow 240ms cubic-bezier(0.22,1,0.36,1)" }}
                   className="stsg-card"
                 >
                   <Image src={s.icon} alt="" width={32} height={32} style={{ marginBottom: 16, filter: "brightness(0) saturate(100%) invert(31%) sepia(15%) saturate(1234%) hue-rotate(85deg) brightness(95%) contrast(86%)" }} />
