@@ -150,82 +150,97 @@ export function QuoteForm() {
       <h3>Beskriv din opgave</h3>
       <p>Det tager 1 minut. Du forpligter dig ikke til noget.</p>
 
-      <label>Hvad har du brug for? <span>(vælg én eller flere)</span></label>
-      <div className={`stqf-services${errors.services ? " stqf-services--err" : ""}`}>
-        {SERVICES.map((s) => (
-          <span
-            key={s.value}
-            className={`stqf-pill${selected.includes(s.value) ? " is-on" : ""}`}
-            onClick={() => toggle(s.value)}
-            role="checkbox"
-            aria-checked={selected.includes(s.value)}
-            tabIndex={0}
-            onKeyDown={(e) => { if (e.key === " " || e.key === "Enter") toggle(s.value); }}
-          >
-            <Image src={s.icon} alt="" width={16} height={16} />
-            {s.value}
-          </span>
-        ))}
+      {/* Ydelser */}
+      <div className="stqf-field">
+        <label>Hvad har du brug for? <span>(vælg én eller flere)</span></label>
+        <div className={`stqf-services${errors.services ? " stqf-services--err" : ""}`}>
+          {SERVICES.map((s) => (
+            <span
+              key={s.value}
+              className={`stqf-pill${selected.includes(s.value) ? " is-on" : ""}`}
+              onClick={() => toggle(s.value)}
+              role="checkbox"
+              aria-checked={selected.includes(s.value)}
+              tabIndex={0}
+              onKeyDown={(e) => { if (e.key === " " || e.key === "Enter") toggle(s.value); }}
+            >
+              <Image src={s.icon} alt="" width={16} height={16} />
+              {s.value}
+            </span>
+          ))}
+        </div>
+        {errors.services && <p className="stqf-error">{errors.services}</p>}
       </div>
-      {errors.services && <p className="stqf-error">{errors.services}</p>}
 
-      <div className="stqf-row">
+      {/* Navn + Telefon */}
+      <div className="stqf-field">
+        <div className="stqf-row">
+          <label>
+            Navn
+            <input
+              type="text"
+              name="name"
+              className={errors.name ? "stqf-input--err" : undefined}
+              onChange={() => clearError("name")}
+            />
+          </label>
+          <label>
+            Telefon <span>(valgfrit)</span>
+            <input
+              type="tel"
+              name="phone"
+              className={errors.contact ? "stqf-input--err" : undefined}
+              onChange={() => clearError("contact")}
+            />
+          </label>
+        </div>
+        {errors.name && <p className="stqf-error">{errors.name}</p>}
+      </div>
+
+      {/* E-mail */}
+      <div className="stqf-field">
         <label>
-          Navn
+          E-mail
           <input
-            type="text"
-            name="name"
-            className={errors.name ? "stqf-input--err" : undefined}
-            onChange={() => clearError("name")}
-          />
-        </label>
-        <label>
-          Telefon <span>(valgfrit)</span>
-          <input
-            type="tel"
-            name="phone"
+            type="email"
+            name="email"
             className={errors.contact ? "stqf-input--err" : undefined}
             onChange={() => clearError("contact")}
           />
         </label>
+        {errors.contact && <p className="stqf-error">{errors.contact}</p>}
       </div>
-      {errors.name && <p className="stqf-error">{errors.name}</p>}
 
-      <label>
-        E-mail
-        <input
-          type="email"
-          name="email"
-          className={errors.contact ? "stqf-input--err" : undefined}
-          onChange={() => clearError("contact")}
-        />
-      </label>
-      {errors.contact && <p className="stqf-error">{errors.contact}</p>}
+      {/* Adresse */}
+      <div className="stqf-field">
+        <label>
+          Adresse / by
+          <input
+            type="text"
+            name="address"
+            placeholder="F.eks. Silkeborg"
+            className={errors.address ? "stqf-input--err" : undefined}
+            onChange={() => clearError("address")}
+          />
+        </label>
+        {errors.address && <p className="stqf-error">{errors.address}</p>}
+      </div>
 
-      <label>
-        Adresse / by
-        <input
-          type="text"
-          name="address"
-          placeholder="F.eks. Silkeborg"
-          className={errors.address ? "stqf-input--err" : undefined}
-          onChange={() => clearError("address")}
-        />
-      </label>
-      {errors.address && <p className="stqf-error">{errors.address}</p>}
+      {/* Besked */}
+      <div className="stqf-field">
+        <label>
+          Kort om opgaven
+          <textarea
+            name="message"
+            placeholder="F.eks.: 30 m bøgehæk, ca. 2 m høj, ligger ud mod villavej."
+            className={errors.message ? "stqf-input--err" : undefined}
+            onChange={() => clearError("message")}
+          />
+        </label>
+        {errors.message && <p className="stqf-error">{errors.message}</p>}
+      </div>
 
-      <label>
-        Kort om opgaven
-        <textarea
-          name="message"
-          placeholder="F.eks.: 30 m bøgehæk, ca. 2 m høj, ligger ud mod villavej."
-          className={errors.message ? "stqf-input--err" : undefined}
-          onChange={() => clearError("message")}
-        />
-      </label>
-      {errors.message && <p className="stqf-error">{errors.message}</p>}
-
-      {/* Image upload */}
+      {/* Billedupload */}
       <div style={{ marginBottom: 14 }}>
         <div style={{ fontSize: 13, fontWeight: 500, color: "var(--bark)", marginBottom: 6 }}>
           Billeder af opgaven <span style={{ fontWeight: 400, color: "var(--stone)" }}>(valgfrit — op til {MAX_IMAGES})</span>
@@ -233,7 +248,6 @@ export function QuoteForm() {
         <p style={{ fontSize: 13, color: "var(--stone)", margin: "0 0 10px", lineHeight: 1.5 }}>
           Et billede siger mere end tusind ord. Snap et foto af hækken, fliserne eller haven — så kan vi give dig et præcist tilbud med det samme.
         </p>
-
         <input
           ref={fileRef}
           type="file"
@@ -242,7 +256,6 @@ export function QuoteForm() {
           style={{ display: "none" }}
           onChange={(e) => addFiles(e.target.files)}
         />
-
         {images.length < MAX_IMAGES && (
           <div
             className={`stqf-dropzone${dragging ? " is-over" : ""}`}
@@ -258,7 +271,6 @@ export function QuoteForm() {
             <span style={{ fontSize: 12, color: "var(--stone)", marginTop: 2 }}>eller træk og slip dem her</span>
           </div>
         )}
-
         {previews.length > 0 && (
           <div className="stqf-thumbs">
             {previews.map((src, i) => (
@@ -274,7 +286,7 @@ export function QuoteForm() {
         )}
       </div>
 
-      {/* Honeypot — hidden from humans, bots fill it in */}
+      {/* Honeypot */}
       <div aria-hidden="true" style={{ position: "absolute", left: "-9999px", opacity: 0, pointerEvents: "none", tabIndex: -1 } as React.CSSProperties}>
         <label>Lad dette felt stå tomt<input type="text" name="_gotcha" tabIndex={-1} autoComplete="off" /></label>
       </div>
@@ -284,16 +296,19 @@ export function QuoteForm() {
         <a href="/privatlivspolitik" style={{ color: "var(--forest)", textDecoration: "underline" }}>Læs vores privatlivspolitik.</a>
       </p>
 
-      <label className={`stqf-consent${errors.consent ? " stqf-consent--err" : ""}`}>
-        <input
-          type="checkbox"
-          checked={consented}
-          onChange={(e) => { setConsented(e.target.checked); clearError("consent"); }}
-        />
-        Jeg har læst SilkeHaves{" "}
-        <a href="/privatlivspolitik" style={{ color: "var(--forest)", textDecoration: "underline" }}>privatlivspolitik</a>.
-      </label>
-      {errors.consent && <p className="stqf-error" style={{ marginTop: -12 }}>{errors.consent}</p>}
+      {/* Samtykke */}
+      <div className="stqf-field">
+        <label className={`stqf-consent${errors.consent ? " stqf-consent--err" : ""}`}>
+          <input
+            type="checkbox"
+            checked={consented}
+            onChange={(e) => { setConsented(e.target.checked); clearError("consent"); }}
+          />
+          Jeg har læst SilkeHaves{" "}
+          <a href="/privatlivspolitik" style={{ color: errors.consent ? "var(--rust)" : "var(--forest)", textDecoration: "underline" }}>privatlivspolitik</a>.
+        </label>
+        {errors.consent && <p className="stqf-error">{errors.consent}</p>}
+      </div>
 
       <div className="stqf-actions">
         <button className="stb stb-primary" type="submit" disabled={status === "loading"}>
