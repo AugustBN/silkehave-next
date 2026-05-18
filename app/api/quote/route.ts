@@ -1,3 +1,5 @@
+import { after } from "next/server";
+
 const MAX_BODY_BYTES = 20 * 1024 * 1024; // 20 MB
 
 // Escape Telegram Markdown special chars to prevent injection
@@ -86,21 +88,24 @@ export async function POST(request: Request) {
     return Response.json({ error: "Telegram fejl" }, { status: 502 });
   }
 
+  // Send photos in the background — don't make the user wait
   if (hasImages) {
-    for (const b64 of images!.slice(0, 4)) {
-      try {
-        const buffer = Buffer.from(b64, "base64");
-        const fd = new FormData();
-        fd.append("chat_id", String(chatId));
-        fd.append("photo", new Blob([buffer], { type: "image/jpeg" }), "foto.jpg");
-        await fetch(`https://api.telegram.org/bot${token}/sendPhoto`, {
-          method: "POST",
-          body: fd,
-        });
-      } catch (err) {
-        console.error("Telegram sendPhoto fejl:", err);
+    after(async () => {
+      for (const b64 of images!.slice(0, 4)) {
+        try {
+          const buffer = Buffer.from(b64, "base64");
+          const fd = new FormData();
+          fd.append("chat_id", String(chatId));
+          fd.append("photo", new Blob([buffer], { type: "image/jpeg" }), "foto.jpg");
+          await fetch(`https://api.telegram.org/bot${token}/sendPhoto`, {
+            method: "POST",
+            body: fd,
+          });
+        } catch (err) {
+          console.error("Telegram sendPhoto fejl:", err);
+        }
       }
-    }
+    });
   }
 
   return Response.json({ ok: true });
