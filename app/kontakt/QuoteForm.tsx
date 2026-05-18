@@ -50,7 +50,7 @@ function getErrors(
   if (!String(fd.get("address") ?? "").trim()) errs.address = "Skriv din adresse eller by";
   if (!String(fd.get("message") ?? "").trim()) errs.message = "Beskriv kort din opgave";
   if (selectedServices.length === 0) errs.services = "Vælg mindst én ydelse";
-  if (!consented) errs.consent = "Sæt hak i privatlivspolitikken for at sende";
+  if (!consented) errs.consent = "Afkryds for at fortsætte";
   return errs;
 }
 
@@ -170,20 +170,58 @@ export function QuoteForm() {
       {errors.services && <p className="stqf-error">{errors.services}</p>}
 
       <div className="stqf-row">
-        <label>Navn<input type="text" name="name" onChange={() => clearError("name")} /></label>
-        <label>Telefon <span>(valgfrit)</span><input type="tel" name="phone" onChange={() => clearError("contact")} /></label>
+        <label>
+          Navn
+          <input
+            type="text"
+            name="name"
+            className={errors.name ? "stqf-input--err" : undefined}
+            onChange={() => clearError("name")}
+          />
+        </label>
+        <label>
+          Telefon <span>(valgfrit)</span>
+          <input
+            type="tel"
+            name="phone"
+            className={errors.contact ? "stqf-input--err" : undefined}
+            onChange={() => clearError("contact")}
+          />
+        </label>
       </div>
       {errors.name && <p className="stqf-error">{errors.name}</p>}
 
-      <label>E-mail<input type="email" name="email" onChange={() => clearError("contact")} /></label>
+      <label>
+        E-mail
+        <input
+          type="email"
+          name="email"
+          className={errors.contact ? "stqf-input--err" : undefined}
+          onChange={() => clearError("contact")}
+        />
+      </label>
       {errors.contact && <p className="stqf-error">{errors.contact}</p>}
 
-      <label>Adresse / by<input type="text" name="address" placeholder="F.eks. Silkeborg" onChange={() => clearError("address")} /></label>
+      <label>
+        Adresse / by
+        <input
+          type="text"
+          name="address"
+          placeholder="F.eks. Silkeborg"
+          className={errors.address ? "stqf-input--err" : undefined}
+          onChange={() => clearError("address")}
+        />
+      </label>
       {errors.address && <p className="stqf-error">{errors.address}</p>}
 
       <label>
         Kort om opgaven
-        <textarea name="message" placeholder="F.eks.: 30 m bøgehæk, ca. 2 m høj, ligger ud mod villavej." onChange={() => clearError("message")} />
+        <textarea
+          name="message"
+          placeholder="F.eks.: 30 m bøgehæk, ca. 2 m høj, ligger ud mod villavej."
+          className={errors.message ? "stqf-input--err" : undefined}
+          onChange={() => clearError("message")}
+        />
       </label>
       {errors.message && <p className="stqf-error">{errors.message}</p>}
 
@@ -246,7 +284,7 @@ export function QuoteForm() {
         <a href="/privatlivspolitik" style={{ color: "var(--forest)", textDecoration: "underline" }}>Læs vores privatlivspolitik.</a>
       </p>
 
-      <label className="stqf-consent">
+      <label className={`stqf-consent${errors.consent ? " stqf-consent--err" : ""}`}>
         <input
           type="checkbox"
           checked={consented}
@@ -255,7 +293,7 @@ export function QuoteForm() {
         Jeg har læst SilkeHaves{" "}
         <a href="/privatlivspolitik" style={{ color: "var(--forest)", textDecoration: "underline" }}>privatlivspolitik</a>.
       </label>
-      {errors.consent && <p className="stqf-error">{errors.consent}</p>}
+      {errors.consent && <p className="stqf-error" style={{ marginTop: -12 }}>{errors.consent}</p>}
 
       <div className="stqf-actions">
         <button className="stb stb-primary" type="submit" disabled={status === "loading"}>

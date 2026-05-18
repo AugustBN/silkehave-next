@@ -189,7 +189,9 @@ a:hover { color: var(--forest); text-decoration-thickness: 2px; }
 .stqf-consent { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; color: var(--bark); margin: 0 0 16px; cursor: pointer; line-height: 1.4; }
 .stqf-consent input[type="checkbox"] { margin-top: 2px; flex-shrink: 0; accent-color: var(--forest); width: 15px; height: 15px; cursor: pointer; }
 .stqf-error { font-size: 12px; font-weight: 500; color: var(--rust); margin: -10px 0 14px; display: block; }
+.stqf-input--err { border-color: var(--rust) !important; background: #fff8f8 !important; }
 .stqf-services--err { outline: 1.5px solid var(--rust); outline-offset: 6px; border-radius: var(--radius-sm); }
+.stqf-consent--err { color: var(--rust); }
 .stqf-done { text-align: center; padding: 24px 16px; }
 .stqf-dropzone { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; padding: 20px; border: 1.5px dashed var(--stone-25); border-radius: var(--radius-sm); background: var(--cream); cursor: pointer; font-size: 14px; color: var(--bark); transition: border-color var(--dur-fast) var(--ease-out), background var(--dur-fast) var(--ease-out); margin-bottom: 10px; }
 .stqf-dropzone:hover, .stqf-dropzone.is-over { border-color: var(--hedge); background: var(--sage-light); }
