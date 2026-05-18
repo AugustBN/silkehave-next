@@ -5,11 +5,11 @@ import { useState } from "react";
 
 const SERVICES = [
   { value: "Hækklipning", icon: "/assets/icon-haekklipning.svg" },
-  { value: "Andet",       icon: "/assets/icon-mappin.svg" },
   { value: "Fliserens",   icon: "/assets/icon-fliserens.svg"    },
   { value: "Vinduesrens", icon: "/assets/icon-vinduesrens.svg"  },
   { value: "Snerydning",  icon: "/assets/icon-snerydning.svg"   },
   { value: "Haveordning", icon: "/assets/icon-haveordning.svg"  },
+  { value: "Andet",       icon: "/assets/icon-mappin.svg"       },
 ];
 
 export function QuoteForm() {
