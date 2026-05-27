@@ -85,18 +85,19 @@ a:hover { color: var(--forest); text-decoration-thickness: 2px; }
   transition: background var(--dur-fast) var(--ease-out),
               color var(--dur-fast) var(--ease-out),
               border-color var(--dur-fast) var(--ease-out),
-              transform var(--dur-fast) var(--ease-out);
+              transform var(--dur-fast) var(--ease-out),
+              box-shadow var(--dur-fast) var(--ease-out);
 }
 .stb:hover { text-decoration: none; }
 .stb:active { transform: scale(var(--press-scale)); }
 .stb-primary       { background: var(--hedge);  color: #fff; border-color: var(--hedge); }
-.stb-primary:hover { background: var(--hedge-hover); border-color: var(--hedge-hover); color: #fff; }
+.stb-primary:hover { background: var(--hedge-hover); border-color: var(--hedge-hover); color: #fff; box-shadow: 0 0 0 4px rgba(47,140,74,0.18), 0 0 18px 4px rgba(47,140,74,0.12); }
 .stb-primary-light       { background: #fff; color: var(--hedge); border-color: #fff; }
-.stb-primary-light:hover { background: var(--cream); color: var(--hedge); }
+.stb-primary-light:hover { background: var(--cream); color: var(--hedge); box-shadow: 0 0 0 4px rgba(255,255,255,0.22), 0 0 18px 4px rgba(255,255,255,0.14); }
 .stb-ghost       { background: transparent; color: var(--hedge); border-color: var(--hedge); }
-.stb-ghost:hover { background: var(--hedge); color: #fff; }
+.stb-ghost:hover { background: var(--hedge); color: #fff; box-shadow: 0 0 0 4px rgba(47,140,74,0.18), 0 0 18px 4px rgba(47,140,74,0.12); }
 .stb-ghost-light       { background: transparent; color: #fff; border-color: #fff; }
-.stb-ghost-light:hover { background: #fff; color: var(--hedge); }
+.stb-ghost-light:hover { background: #fff; color: var(--hedge); box-shadow: 0 0 0 4px rgba(255,255,255,0.22), 0 0 18px 4px rgba(255,255,255,0.14); }
 .stb-icon { display: inline-flex; }
 
 /* ---- Page head (interior pages) ---- */
