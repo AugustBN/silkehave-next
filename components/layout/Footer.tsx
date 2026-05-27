@@ -26,10 +26,16 @@ export function Footer() {
         </div>
         <div className="stft-col">
           <h4>Kontakt</h4>
+          <a href="tel:+4591251021">
+            <Image src="/assets/icon-phone.svg" alt="" width={14} height={14} /> +45 91 25 10 21
+          </a>
+          <a href="mailto:kontaktsilkehave@gmail.com">
+            <Image src="/assets/icon-mail.svg" alt="" width={14} height={14} /> kontaktsilkehave@gmail.com
+          </a>
           <a href="https://www.facebook.com/profile.php?id=61574788933190" target="_blank" rel="noopener noreferrer">
             <Image src="/assets/icon-arrow-right.svg" alt="" width={14} height={14} /> Facebook · silkehave
           </a>
-          <span className="stft-meta"><Image src="/assets/icon-mappin.svg" alt="" width={14} height={14} /> Midtjylland</span>
+          <span className="stft-meta"><Image src="/assets/icon-mappin.svg" alt="" width={14} height={14} /> Midtjylland · CVR 46370325</span>
         </div>
       </div>
       <div className="stft-base">
