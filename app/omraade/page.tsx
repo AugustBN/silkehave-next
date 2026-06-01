@@ -5,11 +5,11 @@ import { Header } from "@/components/layout/Header";
 
 export const metadata: Metadata = {
   title: "Område — Haveservice i Silkeborg, Viborg & Midtjylland",
-  description: "Silkehave kører i Silkeborg, Viborg, Skanderborg, Herning, Ikast, Ry og resten af Midtjylland. Hækklipning, fliserens og haveservice nær dig.",
+  description: "SilkeHave kører i Silkeborg, Viborg, Skanderborg, Herning, Ikast, Ry og resten af Midtjylland. Hækklipning, fliserens og haveservice nær dig.",
   alternates: { canonical: "https://silkehave.dk/omraade" },
   openGraph: {
-    title: "Område — Haveservice i Silkeborg, Viborg & Midtjylland | Silkehave",
-    description: "Silkehave kører i Silkeborg, Viborg, Skanderborg, Herning, Ikast, Ry og resten af Midtjylland.",
+    title: "Område — Haveservice i Silkeborg, Viborg & Midtjylland | SilkeHave",
+    description: "SilkeHave kører i Silkeborg, Viborg, Skanderborg, Herning, Ikast, Ry og resten af Midtjylland.",
     images: [{ url: "/assets/photos/haek-klippet.jpg" }],
   },
 };

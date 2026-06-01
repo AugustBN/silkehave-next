@@ -6,11 +6,11 @@ import { QuoteForm } from "./QuoteForm";
 
 export const metadata: Metadata = {
   title: "Kontakt & tilbud — Haveservice i Midtjylland",
-  description: "Få et tilbud fra Silkehave. Vi kører i Silkeborg og hele Midtjylland — hækklipning, fliserens, græsslåning. Fast pris inden vi starter.",
+  description: "Få et tilbud fra SilkeHave. Vi kører i Silkeborg og hele Midtjylland — hækklipning, fliserens, græsslåning. Fast pris inden vi starter.",
   alternates: { canonical: "https://silkehave.dk/kontakt" },
   openGraph: {
-    title: "Kontakt & tilbud — Haveservice i Midtjylland | Silkehave",
-    description: "Få et tilbud fra Silkehave. Vi kører i Silkeborg og hele Midtjylland. Fast pris inden vi starter.",
+    title: "Kontakt & tilbud — Haveservice i Midtjylland | SilkeHave",
+    description: "Få et tilbud fra SilkeHave. Vi kører i Silkeborg og hele Midtjylland. Fast pris inden vi starter.",
     images: [{ url: "/assets/photos/fliser-efter.jpg" }],
   },
 };

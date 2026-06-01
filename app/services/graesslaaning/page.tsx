@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description: "Græsslåning i Midtjylland. Ugentligt eller efter behov i Silkeborg og omegn — vi slår, kanter og rydder op. Fast pris — ring 91 25 10 21.",
   alternates: { canonical: "https://silkehave.dk/services/graesslaaning" },
   openGraph: {
-    title: "Græsslåning Silkeborg & Midtjylland | Silkehave",
+    title: "Græsslåning Silkeborg & Midtjylland | SilkeHave",
     description: "Græsslåning i Midtjylland. Ugentligt eller efter behov i Silkeborg og omegn. Fast pris — ring 91 25 10 21.",
     images: [{ url: "/assets/photos/terrasse-have.jpg" }],
   },

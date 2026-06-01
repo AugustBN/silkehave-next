@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description: "Fliserens i Midtjylland. Vi renser terrasse, indkørsel og gangarealer med højtryk i Silkeborg og omegn. Fast pris — ring 91 25 10 21.",
   alternates: { canonical: "https://silkehave.dk/services/fliserens" },
   openGraph: {
-    title: "Fliserens Silkeborg & Midtjylland | Silkehave",
+    title: "Fliserens Silkeborg & Midtjylland | SilkeHave",
     description: "Fliserens i Midtjylland. Vi renser terrasse, indkørsel og gangarealer med højtryk i Silkeborg og omegn. Fast pris — ring 91 25 10 21.",
     images: [{ url: "/assets/photos/fliser-efter.jpg" }],
   },

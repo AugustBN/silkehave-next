@@ -21,8 +21,8 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL("https://silkehave.dk"),
   title: {
-    default: "Haveservice i Silkeborg & Midtjylland | Silkehave",
-    template: "%s | Silkehave",
+    default: "Haveservice i Silkeborg & Midtjylland | SilkeHave",
+    template: "%s | SilkeHave",
   },
   description: "Lokal have- og ejendomsservice i Midtjylland. Hækklipning, fliserens, græsslåning og snerydning i Silkeborg og omegn. Fast pris — ring 91 25 10 21.",
   verification: {
@@ -31,9 +31,9 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "da_DK",
-    siteName: "Silkehave",
+    siteName: "SilkeHave",
     url: "https://silkehave.dk",
-    title: "Haveservice i Silkeborg & Midtjylland | Silkehave",
+    title: "Haveservice i Silkeborg & Midtjylland | SilkeHave",
     description: "Lokal have- og ejendomsservice i Midtjylland. Hækklipning, fliserens, græsslåning og snerydning i Silkeborg og omegn. Fast pris — ring 91 25 10 21.",
     images: [{ url: "/assets/photos/fliser-efter.jpg", width: 1200, height: 800 }],
   },
@@ -42,11 +42,11 @@ export const metadata: Metadata = {
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  name: "Silkehave",
+  name: "SilkeHave",
   description: "Have- og ejendomsservice i Silkeborg og Midtjylland. Hækklipning, fliserens, græsslåning, vinduesrens og snerydning.",
   url: "https://silkehave.dk",
   telephone: "+4591251021",
-  email: "KontaktSilkehave@gmail.com",
+  email: "KontaktSilkeHave@gmail.com",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Silkeborg",

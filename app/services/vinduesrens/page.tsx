@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description: "Vinduesrens indvendigt og udvendigt i Silkeborg og Midtjylland. Karme tørres af. Ingen striber — fast pris, ring 91 25 10 21.",
   alternates: { canonical: "https://silkehave.dk/services/vinduesrens" },
   openGraph: {
-    title: "Vinduesrens Silkeborg & Midtjylland | Silkehave",
+    title: "Vinduesrens Silkeborg & Midtjylland | SilkeHave",
     description: "Vinduesrens indvendigt og udvendigt i Silkeborg og Midtjylland. Karme tørres af. Ingen striber.",
     images: [{ url: "/assets/photos/haek-roekke-ny.jpg" }],
   },

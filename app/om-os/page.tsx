@@ -5,11 +5,11 @@ import { Header } from "@/components/layout/Header";
 
 export const metadata: Metadata = {
   title: "Om os — Haveservice i Midtjylland",
-  description: "Silkehave er et lokalt have- og ejendomsservicefirma med base i Silkeborg. Vi kører i hele Midtjylland — vi laver det vi siger, og vi laver det pænt.",
+  description: "SilkeHave er et lokalt have- og ejendomsservicefirma med base i Silkeborg. Vi kører i hele Midtjylland — vi laver det vi siger, og vi laver det pænt.",
   alternates: { canonical: "https://silkehave.dk/om-os" },
   openGraph: {
-    title: "Om os — Haveservice i Midtjylland | Silkehave",
-    description: "Silkehave er et lokalt have- og ejendomsservicefirma med base i Silkeborg. Vi kører i hele Midtjylland.",
+    title: "Om os — Haveservice i Midtjylland | SilkeHave",
+    description: "SilkeHave er et lokalt have- og ejendomsservicefirma med base i Silkeborg. Vi kører i hele Midtjylland.",
     images: [{ url: "/assets/photos/haek-klippet.jpg" }],
   },
 };
@@ -22,7 +22,7 @@ export default function OmOsPage() {
         <div className="page-head-inner">
           <span className="stb-eyebrow">Om os</span>
           <h1>Et par hænder du<br />kan regne med.</h1>
-          <p>Silkehave er et lokalt firma i Midtjylland. Vi laver have‑ og ejendomsservice for både private og boligforeninger — og vi kommer, når vi har sagt det.</p>
+          <p>SilkeHave er et lokalt firma i Midtjylland. Vi laver have‑ og ejendomsservice for både private og boligforeninger — og vi kommer, når vi har sagt det.</p>
         </div>
       </section>
 

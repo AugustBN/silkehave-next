@@ -7,11 +7,11 @@ import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { HedgeClipper } from "@/components/ui/HedgeClipper";
 
 export const metadata: Metadata = {
-  title: "Haveservice i Silkeborg & Midtjylland | Silkehave",
+  title: "Haveservice i Silkeborg & Midtjylland | SilkeHave",
   description: "Lokal have- og ejendomsservice i Midtjylland. Hækklipning, fliserens, græsslåning og snerydning i Silkeborg og omegn. Fast pris — ring 91 25 10 21.",
   alternates: { canonical: "https://silkehave.dk" },
   openGraph: {
-    title: "Haveservice i Silkeborg & Midtjylland | Silkehave",
+    title: "Haveservice i Silkeborg & Midtjylland | SilkeHave",
     description: "Lokal have- og ejendomsservice i Midtjylland. Hækklipning, fliserens, græsslåning og snerydning i Silkeborg og omegn. Fast pris — ring 91 25 10 21.",
     url: "https://silkehave.dk",
     images: [{ url: "/assets/photos/fliser-efter.jpg" }],
@@ -23,9 +23,9 @@ const faqSchema = {
   "@type": "FAQPage",
   mainEntity: [
     { "@type": "Question", name: "Hvad koster hækklipning?", acceptedAnswer: { "@type": "Answer", text: "Prisen afhænger af hækkens længde, højde og adgangsforhold. Vi giver en fast pris på den konkrete opgave, inden vi starter. Ring 91 25 10 21 eller send en forespørgsel." } },
-    { "@type": "Question", name: "Hvilke byer kører Silkehave i?", acceptedAnswer: { "@type": "Answer", text: "Vi kører primært i Silkeborg og Midtjylland — inkl. Viborg, Skanderborg, Herning, Ikast, Brande, Bjerringbro, Hammel, Ry, Them og Kjellerup. Står du udenfor listen, ring og spørg." } },
+    { "@type": "Question", name: "Hvilke byer kører SilkeHave i?", acceptedAnswer: { "@type": "Answer", text: "Vi kører primært i Silkeborg og Midtjylland — inkl. Viborg, Skanderborg, Herning, Ikast, Brande, Bjerringbro, Hammel, Ry, Them og Kjellerup. Står du udenfor listen, ring og spørg." } },
     { "@type": "Question", name: "Skal jeg være hjemme, når I kommer?", acceptedAnswer: { "@type": "Answer", text: "Det behøver du ikke. Vi aftaler detaljer på forhånd og sender et billede, når vi er færdige." } },
-    { "@type": "Question", name: "Hvad tilbyder Silkehave?", acceptedAnswer: { "@type": "Answer", text: "Vi tilbyder hækklipning, fliserens, græsslåning, vinduesrens, snerydning og samlede haveordninger for private og boligforeninger i Silkeborg og Midtjylland." } },
+    { "@type": "Question", name: "Hvad tilbyder SilkeHave?", acceptedAnswer: { "@type": "Answer", text: "Vi tilbyder hækklipning, fliserens, græsslåning, vinduesrens, snerydning og samlede haveordninger for private og boligforeninger i Silkeborg og Midtjylland." } },
   ],
 };
 

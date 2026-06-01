@@ -3,8 +3,8 @@ import Link from "next/link";
 import { Header } from "@/components/layout/Header";
 
 export const metadata: Metadata = {
-  title: "Privatlivspolitik — Silkehave",
-  description: "Læs om hvordan Silkehave håndterer dine personoplysninger.",
+  title: "Privatlivspolitik — SilkeHave",
+  description: "Læs om hvordan SilkeHave håndterer dine personoplysninger.",
 };
 
 export default function PrivatlivspolitikPage() {
@@ -24,7 +24,7 @@ export default function PrivatlivspolitikPage() {
 
           <h2>Hvem er ansvarlig</h2>
           <p>
-            Silkehave er ansvarlig for behandlingen af dine personoplysninger.<br />
+            SilkeHave er ansvarlig for behandlingen af dine personoplysninger.<br />
             CVR: 46370325<br />
             Adresse: C/O Alexander, Buskelundengen 98, 8600 Silkeborg<br />
             Mail: <a href="mailto:kontaktsilkehave@gmail.com">kontaktsilkehave@gmail.com</a><br />
@@ -80,7 +80,7 @@ export default function PrivatlivspolitikPage() {
 
           <aside>
             <h4>Google Search Console — søgesynlighed</h4>
-            <p>Vi bruger Google Search Console til at overvåge, hvordan siden optræder i Googles søgeresultater. Search Console behandler aggregerede data om søgeforespørgsler og klik — ingen individuelle brugeroplysninger gemmes af Silkehave. Data behandles af Google under deres privatlivspolitik.</p>
+            <p>Vi bruger Google Search Console til at overvåge, hvordan siden optræder i Googles søgeresultater. Search Console behandler aggregerede data om søgeforespørgsler og klik — ingen individuelle brugeroplysninger gemmes af SilkeHave. Data behandles af Google under deres privatlivspolitik.</p>
           </aside>
 
           <p>Vi har ikke databehandleraftaler med andre systemer, og vi deler ikke oplysninger med tredjeparter til markedsformål.</p>

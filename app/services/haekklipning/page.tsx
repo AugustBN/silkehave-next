@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: "Hækklipning i Silkeborg og Midtjylland. Bøg, liguster, thuja og laurbær. Vi klipper, samler op og kører væk — fast pris før vi starter.",
   alternates: { canonical: "https://silkehave.dk/services/haekklipning" },
   openGraph: {
-    title: "Hækklipning Silkeborg & Midtjylland | Silkehave",
+    title: "Hækklipning Silkeborg & Midtjylland | SilkeHave",
     description: "Hækklipning i Silkeborg og Midtjylland. Bøg, liguster, thuja og laurbær. Vi klipper, samler op og kører væk — fast pris før vi starter.",
     images: [{ url: "/assets/photos/haek-klippet.jpg" }],
   },

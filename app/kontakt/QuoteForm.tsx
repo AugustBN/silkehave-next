@@ -304,7 +304,7 @@ export function QuoteForm() {
             checked={consented}
             onChange={(e) => { setConsented(e.target.checked); clearError("consent"); }}
           />
-          Jeg har læst Silkehaves{" "}
+          Jeg har læst SilkeHaves{" "}
           <a href="/privatlivspolitik" style={{ color: errors.consent ? "var(--rust)" : "var(--forest)", textDecoration: "underline" }}>privatlivspolitik</a>.
         </label>
         {errors.consent && <p className="stqf-error">{errors.consent}</p>}
