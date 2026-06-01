@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Bricolage_Grotesque, DM_Sans } from "next/font/google";
 import "./globals.css";
 import { Footer } from "@/components/layout/Footer";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const bricolage = Bricolage_Grotesque({
   subsets: ["latin"],
@@ -18,23 +19,64 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "SilkeHave — Have‑ og ejendomsservice i Midtjylland",
-  description: "Have- og ejendomsservice i Midtjylland. Hækklipning, fliserens, vinduesrens og snerydning. Fast pris før vi starter.",
+  metadataBase: new URL("https://silkehave.dk"),
+  title: {
+    default: "Haveservice i Silkeborg & Midtjylland | Silkehave",
+    template: "%s | Silkehave",
+  },
+  description: "Lokal have- og ejendomsservice i Midtjylland. Hækklipning, fliserens, græsslåning og snerydning i Silkeborg og omegn. Fast pris — ring 91 25 10 21.",
+  verification: {
+    google: "eZf24AKNow0tCiqIBtMPKpLI1T-TVp1tMWVjfEj8w7s",
+  },
   openGraph: {
     type: "website",
     locale: "da_DK",
-    siteName: "SilkeHave",
-    title: "SilkeHave — Have‑ og ejendomsservice i Midtjylland",
-    description: "Lokal have‑ og ejendomsservice i Midtjylland. Fast pris, ingen overraskelser.",
+    siteName: "Silkehave",
+    url: "https://silkehave.dk",
+    title: "Haveservice i Silkeborg & Midtjylland | Silkehave",
+    description: "Lokal have- og ejendomsservice i Midtjylland. Hækklipning, fliserens, græsslåning og snerydning i Silkeborg og omegn. Fast pris — ring 91 25 10 21.",
+    images: [{ url: "/assets/photos/fliser-efter.jpg", width: 1200, height: 800 }],
   },
+};
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: "Silkehave",
+  description: "Have- og ejendomsservice i Silkeborg og Midtjylland. Hækklipning, fliserens, græsslåning, vinduesrens og snerydning.",
+  url: "https://silkehave.dk",
+  telephone: "+4591251021",
+  email: "KontaktSilkehave@gmail.com",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Silkeborg",
+    addressRegion: "Region Midtjylland",
+    addressCountry: "DK",
+  },
+  areaServed: [
+    "Silkeborg","Viborg","Skanderborg","Herning","Ikast","Brande",
+    "Bjerringbro","Hammel","Ry","Them","Kjellerup","Karup","Galten","Engesvang",
+  ].map((name) => ({ "@type": "City", name })),
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Haveservice",
+    itemListElement: ["Hækklipning","Fliserens","Græsslåning","Vinduesrens","Snerydning","Haveordning"]
+      .map((name) => ({ "@type": "Offer", itemOffered: { "@type": "Service", name } })),
+  },
+  sameAs: ["https://www.facebook.com/profile.php?id=61574788933190"],
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="da" className={`${bricolage.variable} ${dmSans.variable}`}>
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        />
         {children}
         <Footer />
+        <SpeedInsights />
       </body>
     </html>
   );

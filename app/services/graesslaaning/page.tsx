@@ -4,8 +4,14 @@ import Image from "next/image";
 import { Header } from "@/components/layout/Header";
 
 export const metadata: Metadata = {
-  title: "Græsslåning — SilkeHave",
-  description: "Græsslåning i Midtjylland. Ugentligt eller efter behov — vi slår, kanter og rydder op.",
+  title: "Græsslåning Silkeborg & Midtjylland",
+  description: "Græsslåning i Midtjylland. Ugentligt eller efter behov i Silkeborg og omegn — vi slår, kanter og rydder op. Fast pris — ring 91 25 10 21.",
+  alternates: { canonical: "https://silkehave.dk/services/graesslaaning" },
+  openGraph: {
+    title: "Græsslåning Silkeborg & Midtjylland | Silkehave",
+    description: "Græsslåning i Midtjylland. Ugentligt eller efter behov i Silkeborg og omegn. Fast pris — ring 91 25 10 21.",
+    images: [{ url: "/assets/photos/terrasse-have.jpg" }],
+  },
 };
 
 export default function GraesslaningPage() {

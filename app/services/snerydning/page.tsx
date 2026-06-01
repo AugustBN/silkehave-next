@@ -4,8 +4,14 @@ import Image from "next/image";
 import { Header } from "@/components/layout/Header";
 
 export const metadata: Metadata = {
-  title: "Snerydning — SilkeHave",
-  description: "Snerydning i Midtjylland. Sæsonaftale eller akut. Saltning og rydning før morgentrafik.",
+  title: "Snerydning Silkeborg & Midtjylland",
+  description: "Snerydning i Midtjylland. Sæsonaftale eller akut i Silkeborg og omegn. Saltning og rydning — fast pris, ring 91 25 10 21.",
+  alternates: { canonical: "https://silkehave.dk/services/snerydning" },
+  openGraph: {
+    title: "Snerydning Silkeborg & Midtjylland | Silkehave",
+    description: "Snerydning i Midtjylland. Sæsonaftale eller akut i Silkeborg og omegn. Saltning og rydning — fast pris.",
+    images: [{ url: "/assets/photos/haek-parkering.jpg" }],
+  },
 };
 
 export default function SnerydningPage() {

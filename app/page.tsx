@@ -7,8 +7,26 @@ import { ScrollReveal } from "@/components/ui/ScrollReveal";
 import { HedgeClipper } from "@/components/ui/HedgeClipper";
 
 export const metadata: Metadata = {
-  title: "SilkeHave — Have‑ og ejendomsservice i Midtjylland",
-  description: "Have- og ejendomsservice i Midtjylland. Hækklipning, græsslåning, fliserens og snerydning. Fast pris før vi starter.",
+  title: "Haveservice i Silkeborg & Midtjylland | Silkehave",
+  description: "Lokal have- og ejendomsservice i Midtjylland. Hækklipning, fliserens, græsslåning og snerydning i Silkeborg og omegn. Fast pris — ring 91 25 10 21.",
+  alternates: { canonical: "https://silkehave.dk" },
+  openGraph: {
+    title: "Haveservice i Silkeborg & Midtjylland | Silkehave",
+    description: "Lokal have- og ejendomsservice i Midtjylland. Hækklipning, fliserens, græsslåning og snerydning i Silkeborg og omegn. Fast pris — ring 91 25 10 21.",
+    url: "https://silkehave.dk",
+    images: [{ url: "/assets/photos/fliser-efter.jpg" }],
+  },
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    { "@type": "Question", name: "Hvad koster hækklipning?", acceptedAnswer: { "@type": "Answer", text: "Prisen afhænger af hækkens længde, højde og adgangsforhold. Vi giver en fast pris på den konkrete opgave, inden vi starter. Ring 91 25 10 21 eller send en forespørgsel." } },
+    { "@type": "Question", name: "Hvilke byer kører Silkehave i?", acceptedAnswer: { "@type": "Answer", text: "Vi kører primært i Silkeborg og Midtjylland — inkl. Viborg, Skanderborg, Herning, Ikast, Brande, Bjerringbro, Hammel, Ry, Them og Kjellerup. Står du udenfor listen, ring og spørg." } },
+    { "@type": "Question", name: "Skal jeg være hjemme, når I kommer?", acceptedAnswer: { "@type": "Answer", text: "Det behøver du ikke. Vi aftaler detaljer på forhånd og sender et billede, når vi er færdige." } },
+    { "@type": "Question", name: "Hvad tilbyder Silkehave?", acceptedAnswer: { "@type": "Answer", text: "Vi tilbyder hækklipning, fliserens, græsslåning, vinduesrens, snerydning og samlede haveordninger for private og boligforeninger i Silkeborg og Midtjylland." } },
+  ],
 };
 
 const services = [
@@ -34,6 +52,10 @@ const towns = ["Silkeborg","Viborg","Skanderborg","Herning","Ikast","Brande","Bj
 export default function HomePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <Header />
       {/* ---- Hero ---- */}
       <section style={{
@@ -186,6 +208,32 @@ export default function HomePage() {
           </div>
         </div>
         <style>{`@media (max-width: 880px) { .stas-inner { grid-template-columns: 1fr !important; gap: 32px !important; } }`}</style>
+      </section>
+
+      {/* ---- FAQ ---- */}
+      <section style={{ background: "var(--cream)", padding: "80px 0" }}>
+        <div style={{ maxWidth: 720, margin: "0 auto", padding: "0 24px" }}>
+          <span className="stb-eyebrow">Spørgsmål og svar</span>
+          <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(28px, 3.5vw, 40px)", fontWeight: 600, color: "var(--forest)", margin: "0 0 40px", letterSpacing: "-0.015em", lineHeight: 1.1 }}>
+            Det folk oftest spørger om.
+          </h2>
+          {[
+            { q: "Hvad koster hækklipning?", a: "Prisen afhænger af hækkens længde, højde og adgangsforhold. Vi giver en fast pris på den konkrete opgave, inden vi starter. Ring 91 25 10 21 eller send en forespørgsel." },
+            { q: "Hvilke byer kører I i?", a: "Vi kører primært i Silkeborg og Midtjylland — inkl. Viborg, Skanderborg, Herning, Ikast, Brande, Bjerringbro, Hammel, Ry, Them og Kjellerup. Står du udenfor listen, ring og spørg." },
+            { q: "Skal jeg være hjemme, når I kommer?", a: "Det behøver du ikke. Vi aftaler detaljer — højde, areal, adgang — på forhånd, og sender et billede, når vi er færdige." },
+            { q: "Hvornår skal hækken klippes?", a: "De fleste hækarter trives med én runde i juni og én i sensommer. Bøgehæk ser flot ud med én klipning sidst i august." },
+            { q: "Hvad tilbyder I udover hækklipning?", a: "Vi laver fliserens, græsslåning, vinduesrens, snerydning og samlede haveordninger for private og boligforeninger i Silkeborg og omegn." },
+          ].map(({ q, a }) => (
+            <details key={q} style={{ borderBottom: "1px solid var(--stone-25)", padding: "4px 0" }}>
+              <summary style={{ cursor: "pointer", padding: "20px 0", fontFamily: "var(--font-display)", fontSize: 16, fontWeight: 600, color: "var(--bark)", listStyle: "none", display: "flex", justifyContent: "space-between", alignItems: "center", gap: 16 }}>
+                {q}
+                <span style={{ fontSize: 20, fontWeight: 400, color: "var(--forest)", flexShrink: 0 }}>+</span>
+              </summary>
+              <p style={{ paddingBottom: 20, margin: 0, color: "var(--stone)", lineHeight: 1.65 }}>{a}</p>
+            </details>
+          ))}
+        </div>
+        <style>{`details[open] summary span { transform: rotate(45deg); display: inline-block; } details summary::-webkit-details-marker { display: none; }`}</style>
       </section>
 
       {/* ---- CTA band ---- */}

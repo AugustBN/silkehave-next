@@ -4,8 +4,14 @@ import Image from "next/image";
 import { Header } from "@/components/layout/Header";
 
 export const metadata: Metadata = {
-  title: "Haveordning — SilkeHave",
-  description: "Fast haveordning i Midtjylland for private og boligforeninger. Hele sæsonen — uden at du skal tænke på det.",
+  title: "Haveordning Silkeborg & Midtjylland",
+  description: "Fast haveordning i Midtjylland for private og boligforeninger i Silkeborg og omegn. Hele sæsonen — uden at du skal tænke på det.",
+  alternates: { canonical: "https://silkehave.dk/services/haveordning" },
+  openGraph: {
+    title: "Haveordning Silkeborg & Midtjylland | Silkehave",
+    description: "Fast haveordning i Midtjylland for private og boligforeninger i Silkeborg og omegn. Hele sæsonen — uden at du skal tænke på det.",
+    images: [{ url: "/assets/photos/haek-klippet.jpg" }],
+  },
 };
 
 export default function HaveordningPage() {

@@ -61,7 +61,7 @@ export default function PrivatlivspolitikPage() {
           <p>Notifikationer om nye forespørgsler sendes via Telegram og slettes løbende derfra. Kundeoplysninger flyttes til e-mail og eventuelt regnskabssystem.</p>
 
           <h2>Hvem vi deler med</h2>
-          <p>Vi bruger tre systemer der behandler data på vores vegne:</p>
+          <p>Vi bruger fire systemer der behandler data på vores vegne:</p>
 
           <aside>
             <h4>Vercel Inc. — hosting</h4>
@@ -76,6 +76,11 @@ export default function PrivatlivspolitikPage() {
           <aside>
             <h4>Google (Gmail) — e-mail</h4>
             <p>Vores kontaktmail (kontaktsilkehave@gmail.com) er hostet hos Google. Svar på forespørgsler sendes og modtages via Gmail.</p>
+          </aside>
+
+          <aside>
+            <h4>Google Search Console — søgesynlighed</h4>
+            <p>Vi bruger Google Search Console til at overvåge, hvordan siden optræder i Googles søgeresultater. Search Console behandler aggregerede data om søgeforespørgsler og klik — ingen individuelle brugeroplysninger gemmes af Silkehave. Data behandles af Google under deres privatlivspolitik.</p>
           </aside>
 
           <p>Vi har ikke databehandleraftaler med andre systemer, og vi deler ikke oplysninger med tredjeparter til markedsformål.</p>
@@ -101,7 +106,7 @@ export default function PrivatlivspolitikPage() {
           <p>Sitet bruger kun tekniske cookies, der er nødvendige for at det virker. Vi sætter ikke sporings- eller marketingcookies, og vi viser ikke et cookie-banner — fordi der ikke er noget at tage stilling til.</p>
 
           <p style={{ marginTop: 48, fontSize: 14, color: "var(--stone)" }}>
-            Senest opdateret: 18. maj 2026
+            Senest opdateret: 1. juni 2026
           </p>
 
           <p style={{ marginTop: 32 }}>

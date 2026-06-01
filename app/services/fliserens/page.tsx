@@ -4,8 +4,14 @@ import Image from "next/image";
 import { Header } from "@/components/layout/Header";
 
 export const metadata: Metadata = {
-  title: "Fliserens — SilkeHave",
-  description: "Fliserens med højtryk i Midtjylland. Terrassen ser ud som ny — mos, alger og vejsnavs væk.",
+  title: "Fliserens Silkeborg & Midtjylland",
+  description: "Fliserens i Midtjylland. Vi renser terrasse, indkørsel og gangarealer med højtryk i Silkeborg og omegn. Fast pris — ring 91 25 10 21.",
+  alternates: { canonical: "https://silkehave.dk/services/fliserens" },
+  openGraph: {
+    title: "Fliserens Silkeborg & Midtjylland | Silkehave",
+    description: "Fliserens i Midtjylland. Vi renser terrasse, indkørsel og gangarealer med højtryk i Silkeborg og omegn. Fast pris — ring 91 25 10 21.",
+    images: [{ url: "/assets/photos/fliser-efter.jpg" }],
+  },
 };
 
 export default function FliserensPage() {

@@ -5,13 +5,29 @@ import { Header } from "@/components/layout/Header";
 import { ScrollVideo } from "@/components/ui/ScrollVideo";
 
 export const metadata: Metadata = {
-  title: "Hækklipning — SilkeHave",
-  description: "Hækklipning i Midtjylland. Bøg, liguster, thuja og laurbær. Vi klipper, samler op og kører væk.",
+  title: "Hækklipning Silkeborg & Midtjylland",
+  description: "Hækklipning i Silkeborg og Midtjylland. Bøg, liguster, thuja og laurbær. Vi klipper, samler op og kører væk — fast pris før vi starter.",
+  alternates: { canonical: "https://silkehave.dk/services/haekklipning" },
+  openGraph: {
+    title: "Hækklipning Silkeborg & Midtjylland | Silkehave",
+    description: "Hækklipning i Silkeborg og Midtjylland. Bøg, liguster, thuja og laurbær. Vi klipper, samler op og kører væk — fast pris før vi starter.",
+    images: [{ url: "/assets/photos/haek-klippet.jpg" }],
+  },
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    { "@type": "Question", name: "Hvor ofte skal hækken klippes?", acceptedAnswer: { "@type": "Answer", text: "De fleste hækarter trives med én runde i juni og én i sensommer. Bøgehæk ser flot ud med én klipning sidst i august." } },
+    { "@type": "Question", name: "Skal jeg være hjemme, når I klipper hækken?", acceptedAnswer: { "@type": "Answer", text: "Det behøver du ikke. Vi aftaler højde og facon på forhånd, og sender et billede, når vi er færdige." } },
+  ],
 };
 
 export default function HaekklipningPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <Header isStatic />
 
       <section className="page-head">
@@ -56,6 +72,9 @@ export default function HaekklipningPage() {
             <li><strong>Snerydning</strong> — sæsonaftale eller akut. Saltning og rydning før morgentrafik.</li>
             <li><strong>Haveordning</strong> — fast aftale året rundt, så du ikke skal tænke på det.</li>
           </ul>
+
+          <h2>Hækklipning i Silkeborg og Midtjylland</h2>
+          <p>Vi klipper hæk for private og boligforeninger i Silkeborg, Viborg, Skanderborg, Herning og resten af Midtjylland. Ring på <a href="tel:+4591251021">91 25 10 21</a> eller send en forespørgsel.</p>
 
           <h2>Få en fast pris</h2>
           <p>Skriv kort hvor du bor og hvor lang hækken er. Vi vender tilbage indenfor 1–2 hverdage.</p>
