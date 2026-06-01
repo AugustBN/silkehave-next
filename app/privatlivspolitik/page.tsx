@@ -3,8 +3,8 @@ import Link from "next/link";
 import { Header } from "@/components/layout/Header";
 
 export const metadata: Metadata = {
-  title: "Privatlivspolitik — SilkeHave",
-  description: "Læs om hvordan SilkeHave håndterer dine personoplysninger.",
+  title: "Privatlivspolitik — Silkehave",
+  description: "Læs om hvordan Silkehave håndterer dine personoplysninger.",
 };
 
 export default function PrivatlivspolitikPage() {
@@ -24,7 +24,7 @@ export default function PrivatlivspolitikPage() {
 
           <h2>Hvem er ansvarlig</h2>
           <p>
-            SilkeHave er ansvarlig for behandlingen af dine personoplysninger.<br />
+            Silkehave er ansvarlig for behandlingen af dine personoplysninger.<br />
             CVR: 46370325<br />
             Adresse: C/O Alexander, Buskelundengen 98, 8600 Silkeborg<br />
             Mail: <a href="mailto:kontaktsilkehave@gmail.com">kontaktsilkehave@gmail.com</a><br />

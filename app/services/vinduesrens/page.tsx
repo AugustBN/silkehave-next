@@ -71,9 +71,9 @@ export default function VinduesrensPage() {
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
               </span>
             </Link>
-            <span className="stcta-phone">
-              <Image src="/assets/icon-phone.svg" alt="" width={20} height={20} /> -- -- -- --
-            </span>
+            <a className="stcta-phone" href="tel:+4591251021">
+              <Image src="/assets/icon-phone.svg" alt="" width={20} height={20} /> 91 25 10 21
+            </a>
           </div>
         </div>
       </section>

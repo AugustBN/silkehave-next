@@ -4,8 +4,14 @@ import Image from "next/image";
 import { Header } from "@/components/layout/Header";
 
 export const metadata: Metadata = {
-  title: "Om os — SilkeHave",
-  description: "Et lille, lokalt have‑ og ejendomsservice‑firma i Midtjylland. Vi laver det vi siger, og vi laver det pænt.",
+  title: "Om os — Haveservice i Midtjylland",
+  description: "Silkehave er et lokalt have- og ejendomsservicefirma med base i Silkeborg. Vi kører i hele Midtjylland — vi laver det vi siger, og vi laver det pænt.",
+  alternates: { canonical: "https://silkehave.dk/om-os" },
+  openGraph: {
+    title: "Om os — Haveservice i Midtjylland | Silkehave",
+    description: "Silkehave er et lokalt have- og ejendomsservicefirma med base i Silkeborg. Vi kører i hele Midtjylland.",
+    images: [{ url: "/assets/photos/haek-klippet.jpg" }],
+  },
 };
 
 export default function OmOsPage() {
@@ -16,7 +22,7 @@ export default function OmOsPage() {
         <div className="page-head-inner">
           <span className="stb-eyebrow">Om os</span>
           <h1>Et par hænder du<br />kan regne med.</h1>
-          <p>SilkeHave er et lokalt firma i Midtjylland. Vi laver have‑ og ejendomsservice for både private og boligforeninger — og vi kommer, når vi har sagt det.</p>
+          <p>Silkehave er et lokalt firma i Midtjylland. Vi laver have‑ og ejendomsservice for både private og boligforeninger — og vi kommer, når vi har sagt det.</p>
         </div>
       </section>
 
@@ -66,9 +72,9 @@ export default function OmOsPage() {
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
               </span>
             </Link>
-            <span className="stcta-phone">
-              <Image src="/assets/icon-phone.svg" alt="" width={20} height={20} /> -- -- -- --
-            </span>
+            <a className="stcta-phone" href="tel:+4591251021">
+              <Image src="/assets/icon-phone.svg" alt="" width={20} height={20} /> 91 25 10 21
+            </a>
           </div>
         </div>
       </section>

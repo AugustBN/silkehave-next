@@ -4,8 +4,14 @@ import Image from "next/image";
 import { Header } from "@/components/layout/Header";
 
 export const metadata: Metadata = {
-  title: "Område — SilkeHave",
-  description: "Vi kører primært i Midtjylland — Silkeborg, Viborg, Skanderborg, Herning og opland.",
+  title: "Område — Haveservice i Silkeborg, Viborg & Midtjylland",
+  description: "Silkehave kører i Silkeborg, Viborg, Skanderborg, Herning, Ikast, Ry og resten af Midtjylland. Hækklipning, fliserens og haveservice nær dig.",
+  alternates: { canonical: "https://silkehave.dk/omraade" },
+  openGraph: {
+    title: "Område — Haveservice i Silkeborg, Viborg & Midtjylland | Silkehave",
+    description: "Silkehave kører i Silkeborg, Viborg, Skanderborg, Herning, Ikast, Ry og resten af Midtjylland.",
+    images: [{ url: "/assets/photos/haek-klippet.jpg" }],
+  },
 };
 
 const towns = ["Silkeborg","Viborg","Skanderborg","Herning","Ikast","Brande","Bjerringbro","Hammel","Ry","Them","Kjellerup","Karup","Galten","Engesvang"];
@@ -70,7 +76,7 @@ export default function OmraadePage() {
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
               </span>
             </Link>
-            <span className="stcta-phone"><Image src="/assets/icon-phone.svg" alt="" width={20} height={20} /> -- -- -- --</span>
+            <a className="stcta-phone" href="tel:+4591251021"><Image src="/assets/icon-phone.svg" alt="" width={20} height={20} /> 91 25 10 21</a>
           </div>
         </div>
       </section>
