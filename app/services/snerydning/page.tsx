@@ -5,11 +5,11 @@ import { Header } from "@/components/layout/Header";
 
 export const metadata: Metadata = {
   title: "Snerydning Silkeborg & Midtjylland",
-  description: "Snerydning i Midtjylland. Sæsonaftale eller akut i Silkeborg og omegn. Saltning og rydning — fast pris, ring 91 25 10 21.",
+  description: "Snerydning i Midtjylland. Sæsonaftale eller akut i Silkeborg og omegn. Saltning og rydning. Fast pris, ring 91 25 10 21.",
   alternates: { canonical: "https://silkehave.dk/services/snerydning" },
   openGraph: {
     title: "Snerydning Silkeborg & Midtjylland | SilkeHave",
-    description: "Snerydning i Midtjylland. Sæsonaftale eller akut i Silkeborg og omegn. Saltning og rydning — fast pris.",
+    description: "Snerydning i Midtjylland. Sæsonaftale eller akut i Silkeborg og omegn. Saltning og rydning. Fast pris.",
     images: [{ url: "/assets/photos/haek-parkering.jpg" }],
   },
 };
@@ -23,7 +23,7 @@ export default function SnerydningPage() {
         <div className="page-head-inner">
           <div className="stb-eyebrow">Ydelse · Vinter</div>
           <h1>Snerydning,<br />klar når det gælder.</h1>
-          <p>Sæsonaftale eller akut. Saltning og rydning af indkørsel og fortov — gerne inden morgentrafik.</p>
+          <p>Sæsonaftale eller akut. Saltning og rydning af indkørsel og fortov, gerne inden morgentrafikken.</p>
         </div>
       </section>
 
@@ -39,16 +39,16 @@ export default function SnerydningPage() {
           </ul>
 
           <h2>Pris</h2>
-          <p>Vi tilbyder sæsonaftaler med fast pris — eller akutopkald når uvejret rammer. Ring eller skriv, så laver vi en aftale.</p>
+          <p>Vi tilbyder sæsonaftaler med fast pris eller akutopkald, når uvejret rammer. Ring eller skriv, så laver vi en aftale.</p>
 
           <aside>
             <h4>Typiske spørgsmål</h4>
-            <p><strong>Kan I komme akut?</strong><br />Ja, vi prøver altid. Sæsonkunder prioriteres — er du ikke tilmeldt, ring og vi finder en løsning.</p>
+            <p><strong>Kan I komme akut?</strong><br />Ja, vi prøver altid. Sæsonkunder prioriteres. Er du ikke tilmeldt, så ring, og vi finder en løsning.</p>
             <p style={{ margin: 0 }}><strong>Hvad dækker en sæsonaftale?</strong><br />Rydning og saltning ved hver snehændelse i aftalt periode. Fast månedspris uanset vejret.</p>
           </aside>
 
           <h2>Få en fast pris</h2>
-          <p>Skriv kort hvor du bor og hvad der skal ryddes. Vi vender tilbage indenfor 1–2 hverdage.</p>
+          <p>Skriv kort hvor du bor og hvad der skal ryddes. Vi vender tilbage inden for 1-2 hverdage.</p>
           <p style={{ marginTop: 24 }}>
             <Link href="/kontakt" className="stb stb-primary">
               Send en forespørgsel

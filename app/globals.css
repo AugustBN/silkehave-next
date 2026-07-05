@@ -206,6 +206,26 @@ a:hover { color: var(--forest); text-decoration-thickness: 2px; }
 .stqf-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .stqf-thumb-rm { position: absolute; top: 3px; right: 3px; width: 20px; height: 20px; border-radius: 50%; background: rgba(0,0,0,0.65); border: none; cursor: pointer; display: grid; place-items: center; color: #fff; padding: 0; }
 
+/* ---- Tilbudswizard (et spoergsmaal ad gangen) ---- */
+.stqw { position: relative; overflow: hidden; }
+.stqw-progress { display: flex; align-items: center; gap: 8px; margin-bottom: 24px; }
+.stqw-dot { width: 8px; height: 8px; border-radius: 50%; border: none; padding: 0; background: var(--stone-25); cursor: default; transition: background var(--dur-base) var(--ease-out), transform var(--dur-base) var(--ease-out); }
+.stqw-dot.is-active { background: var(--hedge); transform: scale(1.35); }
+.stqw-dot.is-done { background: var(--forest); cursor: pointer; }
+.stqw-count { margin-left: auto; font-size: 12px; font-weight: 600; color: var(--stone); letter-spacing: 0.04em; }
+.stqw-viewport { min-height: 260px; }
+.stqw-sub { font-size: 14px; color: var(--stone); margin: 0 0 18px; line-height: 1.5; }
+.stqw .stqf-services { margin-top: 0; }
+.stqw textarea, .stqw input[type="text"], .stqw input[type="tel"], .stqw input[type="email"] { margin-top: 0; }
+.stqw-fields label { margin-bottom: 12px; }
+.stqw-fields input { margin-top: 6px; }
+.stqw-summary { background: var(--cream); border: 1px solid var(--stone-25); border-radius: var(--radius-md); padding: 16px 18px; margin-bottom: 16px; }
+.stqw-summary p { font-size: 14px; margin: 0 0 6px; color: var(--bark); line-height: 1.45; overflow-wrap: anywhere; }
+.stqw-summary p:last-child { margin-bottom: 0; }
+.stqw-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 22px; }
+.stqw-back { background: none; border: none; padding: 10px 4px; font-family: var(--font-sans); font-size: 14px; font-weight: 600; color: var(--stone); cursor: pointer; transition: color var(--dur-fast) var(--ease-out); }
+.stqw-back:hover { color: var(--forest); }
+
 /* ---- Scroll-driven video ---- */
 .scrollvid { position: relative; width: 100%; height: 250vh; background: var(--moss-deep); }
 .scrollvid-pin { position: sticky; top: 0; height: 100vh; width: 100%; overflow: hidden; }

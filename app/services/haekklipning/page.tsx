@@ -6,11 +6,11 @@ import { ScrollVideo } from "@/components/ui/ScrollVideo";
 
 export const metadata: Metadata = {
   title: "Hækklipning Silkeborg & Midtjylland",
-  description: "Hækklipning i Silkeborg og Midtjylland. Bøg, liguster, thuja og laurbær. Vi klipper, samler op og kører væk — fast pris før vi starter.",
+  description: "Hækklipning i Silkeborg og Midtjylland. Bøg, liguster, thuja og laurbær. Vi klipper, samler op og kører væk. Fast pris før vi starter.",
   alternates: { canonical: "https://silkehave.dk/services/haekklipning" },
   openGraph: {
     title: "Hækklipning Silkeborg & Midtjylland | SilkeHave",
-    description: "Hækklipning i Silkeborg og Midtjylland. Bøg, liguster, thuja og laurbær. Vi klipper, samler op og kører væk — fast pris før vi starter.",
+    description: "Hækklipning i Silkeborg og Midtjylland. Bøg, liguster, thuja og laurbær. Vi klipper, samler op og kører væk. Fast pris før vi starter.",
     images: [{ url: "/assets/photos/haek-klippet.jpg" }],
   },
 };
@@ -34,7 +34,7 @@ export default function HaekklipningPage() {
         <div className="page-head-inner">
           <div className="stb-eyebrow">Ydelse · Have</div>
           <h1>Hækklipning,<br />gjort ordentligt.</h1>
-          <p>Bøg, liguster, thuja og laurbær. Vi klipper, samler op efter os, og kører grenene væk — så terrassen og indkørslen står som da vi kom.</p>
+          <p>Bøg, liguster, thuja og laurbær. Vi klipper, samler op efter os og kører grenene væk, så terrassen og indkørslen står som da vi kom.</p>
         </div>
       </section>
 
@@ -50,7 +50,7 @@ export default function HaekklipningPage() {
           <ul className="check-list">
             <li>Klipper top, sider og bund i den højde og facon du vil have.</li>
             <li>Lægger underlag ud, så græs og fliser ikke får grøn-pletter.</li>
-            <li>Samler grenene op i sække eller på trailer — og kører dem væk.</li>
+            <li>Samler grenene op i sække eller på trailer og kører dem væk.</li>
             <li>Fejer og blæser pænt af, før vi tager hjem.</li>
           </ul>
 
@@ -64,20 +64,19 @@ export default function HaekklipningPage() {
           </aside>
 
           <h2>Andre ydelser</h2>
-          <p>Vi laver også græsslåning, fliserens, vinduesrens, snerydning — og samlede haveordninger, hvor det hele kører af sig selv hen over året.</p>
+          <p>Vi laver også fliserens, vinduesrens, snerydning og samlede haveordninger, hvor det hele kører af sig selv hen over året.</p>
           <ul>
-            <li><strong>Græsslåning</strong> — ugentligt eller efter behov, kanter med hvis du vil have det.</li>
-            <li><strong>Fliserens</strong> — højtryk og blødt kemi. Terrassen ser ud som ny igen.</li>
-            <li><strong>Vinduesrens</strong> — indvendigt og udvendigt. Karme tørres af. Ingen striber.</li>
-            <li><strong>Snerydning</strong> — sæsonaftale eller akut. Saltning og rydning før morgentrafik.</li>
-            <li><strong>Haveordning</strong> — fast aftale året rundt, så du ikke skal tænke på det.</li>
+            <li><strong>Fliserens</strong>: højtryk og blødt kemi. Terrassen ser ud som ny igen.</li>
+            <li><strong>Vinduesrens</strong>: indvendigt og udvendigt. Karme tørres af. Ingen striber.</li>
+            <li><strong>Snerydning</strong>: sæsonaftale eller akut. Saltning og rydning før morgentrafikken.</li>
+            <li><strong>Haveordning</strong>: fast aftale året rundt, så du ikke skal tænke på det.</li>
           </ul>
 
           <h2>Hækklipning i Silkeborg og Midtjylland</h2>
           <p>Vi klipper hæk for private og boligforeninger i Silkeborg, Viborg, Skanderborg, Herning og resten af Midtjylland. Ring på <a href="tel:+4591251021">91 25 10 21</a> eller send en forespørgsel.</p>
 
           <h2>Få en fast pris</h2>
-          <p>Skriv kort hvor du bor og hvor lang hækken er. Vi vender tilbage indenfor 1–2 hverdage.</p>
+          <p>Skriv kort hvor du bor og hvor lang hækken er. Vi vender tilbage inden for 1-2 hverdage.</p>
           <p style={{ marginTop: 24 }}>
             <Link href="/kontakt" className="stb stb-primary">
               Send en forespørgsel

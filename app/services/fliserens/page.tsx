@@ -5,11 +5,11 @@ import { Header } from "@/components/layout/Header";
 
 export const metadata: Metadata = {
   title: "Fliserens Silkeborg & Midtjylland",
-  description: "Fliserens i Midtjylland. Vi renser terrasse, indkørsel og gangarealer med højtryk i Silkeborg og omegn. Fast pris — ring 91 25 10 21.",
+  description: "Fliserens i Midtjylland. Vi renser terrasse, indkørsel og gangarealer med højtryk i Silkeborg og omegn. Fast pris, ring 91 25 10 21.",
   alternates: { canonical: "https://silkehave.dk/services/fliserens" },
   openGraph: {
     title: "Fliserens Silkeborg & Midtjylland | SilkeHave",
-    description: "Fliserens i Midtjylland. Vi renser terrasse, indkørsel og gangarealer med højtryk i Silkeborg og omegn. Fast pris — ring 91 25 10 21.",
+    description: "Fliserens i Midtjylland. Vi renser terrasse, indkørsel og gangarealer med højtryk i Silkeborg og omegn. Fast pris, ring 91 25 10 21.",
     images: [{ url: "/assets/photos/fliser-efter.jpg" }],
   },
 };
@@ -23,7 +23,7 @@ export default function FliserensPage() {
         <div className="page-head-inner">
           <div className="stb-eyebrow">Ydelse · Ejendom</div>
           <h1>Fliserens,<br />terrassen ser ud som ny.</h1>
-          <p>Højtryk og blødt kemi fjerner mos, alger og vejsnavs. Vi passer på fuger og overflader — og rydder op efter os.</p>
+          <p>Højtryk og blødt kemi fjerner mos, alger og vejsnavs. Vi passer på fuger og overflader, og vi rydder op efter os.</p>
         </div>
       </section>
 
@@ -33,8 +33,8 @@ export default function FliserensPage() {
           <h2>Hvad vi gør</h2>
           <ul className="check-list">
             <li>Højtryksrenser fliser, indkørsel og terrasse.</li>
-            <li>Bruger blødt kemi til mos og alger — skåner fuger og overflader.</li>
-            <li>Fejer og samler snavset op — intet tilbage på fliserne.</li>
+            <li>Bruger blødt kemi til mos og alger, der skåner fuger og overflader.</li>
+            <li>Fejer og samler snavset op. Intet ligger tilbage på fliserne.</li>
             <li>Kan behandle med mosforebyggende middel bagefter hvis du vil.</li>
           </ul>
 
@@ -44,11 +44,11 @@ export default function FliserensPage() {
           <aside>
             <h4>Typiske spørgsmål</h4>
             <p><strong>Kan I rense alle typer fliser?</strong><br />Vi renser beton-, natursten- og teglfliser. Vi bruger det kemi og tryk der passer til overfladen.</p>
-            <p style={{ margin: 0 }}><strong>Hvornår er det bedst at rense?</strong><br />Forår eller efterår. Undgå stærk sol — kemiet virker bedst på fugtig overflade.</p>
+            <p style={{ margin: 0 }}><strong>Hvornår er det bedst at rense?</strong><br />Forår eller efterår. Undgå stærk sol, kemiet virker bedst på en fugtig overflade.</p>
           </aside>
 
           <h2>Få en fast pris</h2>
-          <p>Skriv kort hvor du bor og ca. areal. Vi vender tilbage indenfor 1–2 hverdage.</p>
+          <p>Skriv kort hvor du bor og ca. areal. Vi vender tilbage inden for 1-2 hverdage.</p>
           <p style={{ marginTop: 24 }}>
             <Link href="/kontakt" className="stb stb-primary">
               Send en forespørgsel

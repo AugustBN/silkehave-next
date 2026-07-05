@@ -5,11 +5,11 @@ import { Header } from "@/components/layout/Header";
 
 export const metadata: Metadata = {
   title: "Haveordning Silkeborg & Midtjylland",
-  description: "Fast haveordning i Midtjylland for private og boligforeninger i Silkeborg og omegn. Hele sæsonen — uden at du skal tænke på det.",
+  description: "Fast haveordning i Midtjylland for private og boligforeninger i Silkeborg og omegn. Hele sæsonen, uden at du skal tænke på det.",
   alternates: { canonical: "https://silkehave.dk/services/haveordning" },
   openGraph: {
     title: "Haveordning Silkeborg & Midtjylland | SilkeHave",
-    description: "Fast haveordning i Midtjylland for private og boligforeninger i Silkeborg og omegn. Hele sæsonen — uden at du skal tænke på det.",
+    description: "Fast haveordning i Midtjylland for private og boligforeninger i Silkeborg og omegn. Hele sæsonen, uden at du skal tænke på det.",
     images: [{ url: "/assets/photos/haek-klippet.jpg" }],
   },
 };
@@ -23,7 +23,7 @@ export default function HaveordningPage() {
         <div className="page-head-inner">
           <div className="stb-eyebrow">Ydelse · Have</div>
           <h1>Haveordning,<br />kører af sig selv.</h1>
-          <p>Fast aftale året rundt for private og boligforeninger. Hækklipning, græsslåning, ukrudt og oprydning — du behøver ikke tænke på det.</p>
+          <p>Fast aftale året rundt for private og boligforeninger. Hækklipning, ukrudt og løbende oprydning. Du behøver ikke tænke på det.</p>
         </div>
       </section>
 
@@ -32,26 +32,26 @@ export default function HaveordningPage() {
 
           <h2>Hvad vi gør</h2>
           <ul className="check-list">
-            <li>Klipper hæk og slår græs efter fast interval.</li>
+            <li>Klipper hæk og holder haven efter fast interval.</li>
             <li>Fjerner ukrudt i bed og langs kanter.</li>
             <li>Beskæring af buske og stauder efter behov.</li>
-            <li>Løbende oprydning — blade, grene og affald.</li>
+            <li>Løbende oprydning af blade, grene og affald.</li>
           </ul>
 
           <h2>Til hvem</h2>
-          <p>Vi laver haveordninger for private husstande og boligforeninger. Særligt populært hos boligforeninger der vil have ét fast firma til al grøn drift — så slipper bestyrelsen for koordinering.</p>
+          <p>Vi laver haveordninger for private husstande og boligforeninger. Særligt populært hos boligforeninger der vil have ét fast firma til al grøn drift, så bestyrelsen slipper for koordinering.</p>
 
           <h2>Pris</h2>
           <p>Fast månedspris eller sæsonpris aftalt ud fra havens størrelse og omfang. Ring eller skriv, så laver vi et tilbud der passer til din situation.</p>
 
           <aside>
             <h4>Typiske spørgsmål</h4>
-            <p><strong>Kan vi tilpasse hvad der er med?</strong><br />Ja. Vi sammensætter ordningen ud fra hvad du har brug for — og justerer undervejs.</p>
-            <p style={{ margin: 0 }}><strong>Hvad med vinter?</strong><br />Haveordningen kan inkludere snerydning — så dækker aftalen hele året.</p>
+            <p><strong>Kan vi tilpasse hvad der er med?</strong><br />Ja. Vi sammensætter ordningen ud fra hvad du har brug for, og vi justerer undervejs.</p>
+            <p style={{ margin: 0 }}><strong>Hvad med vinter?</strong><br />Haveordningen kan inkludere snerydning, så aftalen dækker hele året.</p>
           </aside>
 
           <h2>Få en fast pris</h2>
-          <p>Skriv kort hvad du har brug for og hvor du bor. Vi vender tilbage indenfor 1–2 hverdage.</p>
+          <p>Skriv kort hvad du har brug for og hvor du bor. Vi vender tilbage inden for 1-2 hverdage.</p>
           <p style={{ marginTop: 24 }}>
             <Link href="/kontakt" className="stb stb-primary">
               Send en forespørgsel

@@ -4,11 +4,11 @@ import Image from "next/image";
 import { Header } from "@/components/layout/Header";
 
 export const metadata: Metadata = {
-  title: "Om os — Haveservice i Midtjylland",
-  description: "SilkeHave er et lokalt have- og ejendomsservicefirma med base i Silkeborg. Vi kører i hele Midtjylland — vi laver det vi siger, og vi laver det pænt.",
+  title: "Om os",
+  description: "SilkeHave er et lokalt have- og ejendomsservicefirma med base i Silkeborg. Vi kører i hele Midtjylland. Vi laver det vi siger, og vi laver det pænt.",
   alternates: { canonical: "https://silkehave.dk/om-os" },
   openGraph: {
-    title: "Om os — Haveservice i Midtjylland | SilkeHave",
+    title: "Om os | SilkeHave",
     description: "SilkeHave er et lokalt have- og ejendomsservicefirma med base i Silkeborg. Vi kører i hele Midtjylland.",
     images: [{ url: "/assets/photos/haek-klippet.jpg" }],
   },
@@ -22,7 +22,7 @@ export default function OmOsPage() {
         <div className="page-head-inner">
           <span className="stb-eyebrow">Om os</span>
           <h1>Et par hænder du<br />kan regne med.</h1>
-          <p>SilkeHave er et lokalt firma i Midtjylland. Vi laver have‑ og ejendomsservice for både private og boligforeninger — og vi kommer, når vi har sagt det.</p>
+          <p>SilkeHave er et lokalt firma i Midtjylland. Vi laver have‑ og ejendomsservice for både private og boligforeninger, og vi kommer, når vi har sagt det.</p>
         </div>
       </section>
 
@@ -32,7 +32,7 @@ export default function OmOsPage() {
             <Image src="/assets/photos/haek-roekke-ny.jpg" alt="Hækklipning på sagen" width={959} height={1277} />
             <div>
               <h2>Hvem vi er</h2>
-              <p>Vi er et lille team med base i Silkeborg-området. Vi har kørt med haveservice og ejendomsservice i Midtjylland i en årrække — det meste arbejde kommer ind via mund-til-mund.</p>
+              <p>Vi er et lille team med base i Silkeborg-området. Vi har kørt med haveservice og ejendomsservice i Midtjylland i en årrække. Det meste arbejde kommer ind via mund-til-mund.</p>
               <p>Vi tager kun det arbejde vi kan stå inde for. Hellere sige nej end levere noget der ikke er pænt.</p>
             </div>
           </div>
@@ -45,10 +45,10 @@ export default function OmOsPage() {
           </div>
 
           <h2>Lokal forankring</h2>
-          <p>Vi kører primært i Silkeborg, Viborg, Skanderborg, Herning og opland. Hvis du står lige uden for området — ring og spørg. Vi kan ofte godt komme alligevel.</p>
+          <p>Vi kører primært i Silkeborg, Viborg, Skanderborg, Herning og opland. Står du lige uden for området, så ring og spørg. Vi kan ofte godt komme alligevel.</p>
 
           <h2>Privat og boligforeninger</h2>
-          <p>Vi laver enkeltopgaver for private — en hækklipning, en omgang fliserens, en sæson med snerydning. Og vi laver faste haveordninger for boligforeninger og ejendomme, hvor det hele kører af sig selv hen over året.</p>
+          <p>Vi laver enkeltopgaver for private: en hækklipning, en omgang fliserens eller en sæson med snerydning. Og vi laver faste haveordninger for boligforeninger og ejendomme, hvor det hele kører af sig selv hen over året.</p>
 
           <p style={{ marginTop: 32 }}>
             <Link href="/kontakt" className="stb stb-primary">

@@ -47,8 +47,15 @@ export function ScrollVideo({ src, poster }: { src: string; poster: string }) {
     let inView = true;
     let stuckFrames = 0;
     let recovering = false;
+    let loadStarted = false;
 
-    try { video.load(); } catch {}
+    // Videoen er 9+ MB — vent med fuld download til sektionen nærmer sig viewport
+    const ensureLoad = () => {
+      if (loadStarted) return;
+      loadStarted = true;
+      video.preload = "auto";
+      try { video.load(); } catch {}
+    };
 
     const updateLoader = () => {
       if (!video.duration || video.buffered.length === 0) return;
@@ -74,7 +81,8 @@ export function ScrollVideo({ src, poster }: { src: string; poster: string }) {
       ready = false;
       stuckFrames = 0;
       fallback?.classList.remove("is-hidden");
-      try { video.load(); } catch {}
+      loadStarted = false;
+      ensureLoad();
     };
 
     const clearRecovering = () => { recovering = false; };
@@ -128,10 +136,13 @@ export function ScrollVideo({ src, poster }: { src: string; poster: string }) {
     if ("IntersectionObserver" in window) {
       io = new IntersectionObserver((entries) => {
         inView = entries[0].isIntersecting;
+        if (inView) ensureLoad();
         if (inView && ready) startTicking();
         else stopTicking();
-      }, { rootMargin: "200px 0px" });
+      }, { rootMargin: "600px 0px" });
       io.observe(section);
+    } else {
+      ensureLoad();
     }
 
     const onVisibility = () => {
@@ -172,7 +183,7 @@ export function ScrollVideo({ src, poster }: { src: string; poster: string }) {
           className="scrollvid-media"
           playsInline
           muted
-          preload="auto"
+          preload="metadata"
           tabIndex={-1}
           disablePictureInPicture
           poster={poster}

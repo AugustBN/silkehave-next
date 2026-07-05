@@ -5,7 +5,7 @@ import { Header } from "@/components/layout/Header";
 
 export const metadata: Metadata = {
   title: "Vinduesrens Silkeborg & Midtjylland",
-  description: "Vinduesrens indvendigt og udvendigt i Silkeborg og Midtjylland. Karme tørres af. Ingen striber — fast pris, ring 91 25 10 21.",
+  description: "Vinduesrens indvendigt og udvendigt i Silkeborg og Midtjylland. Karme tørres af. Ingen striber. Fast pris, ring 91 25 10 21.",
   alternates: { canonical: "https://silkehave.dk/services/vinduesrens" },
   openGraph: {
     title: "Vinduesrens Silkeborg & Midtjylland | SilkeHave",
@@ -32,10 +32,10 @@ export default function VinduesrensPage() {
 
           <h2>Hvad vi gør</h2>
           <ul className="check-list">
-            <li>Renser vinduer indvendigt og udvendigt — uden striber.</li>
+            <li>Renser vinduer indvendigt og udvendigt, uden striber.</li>
             <li>Tørrer karme og rammer af.</li>
-            <li>Arbejder systematisk rum for rum så intet spring over.</li>
-            <li>Rydder op efter os — ingen spande og klude efterladt.</li>
+            <li>Arbejder systematisk rum for rum, så intet springes over.</li>
+            <li>Rydder op efter os. Ingen spande eller klude efterladt.</li>
           </ul>
 
           <h2>Pris</h2>
@@ -44,11 +44,11 @@ export default function VinduesrensPage() {
           <aside>
             <h4>Typiske spørgsmål</h4>
             <p><strong>Kan I nå høje vinduer?</strong><br />Ja. Vi har udstyr til vinduer i 2 etager. Større opgaver aftaler vi individuelt.</p>
-            <p style={{ margin: 0 }}><strong>Hvornår skal vinduer renses?</strong><br />2–4 gange om året er typisk. Foråret og efteråret er de mest populære tidspunkter.</p>
+            <p style={{ margin: 0 }}><strong>Hvornår skal vinduer renses?</strong><br />2-4 gange om året er typisk. Foråret og efteråret er de mest populære tidspunkter.</p>
           </aside>
 
           <h2>Få en fast pris</h2>
-          <p>Skriv kort hvor du bor og antal vinduer ca. Vi vender tilbage indenfor 1–2 hverdage.</p>
+          <p>Skriv kort hvor du bor, og cirka hvor mange vinduer der er. Vi vender tilbage inden for 1-2 hverdage.</p>
           <p style={{ marginTop: 24 }}>
             <Link href="/kontakt" className="stb stb-primary">
               Send en forespørgsel

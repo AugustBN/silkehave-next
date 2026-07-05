@@ -24,7 +24,7 @@ const nextConfig: NextConfig = {
       {
         source: "/services/graesslaaning",
         destination: "/kontakt",
-        permanent: false,
+        permanent: true,
       },
     ];
   },
