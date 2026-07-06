@@ -8,7 +8,8 @@ import { AreaSection } from "@/components/sections/AreaSection";
 import { ProcessSection } from "@/components/sections/ProcessSection";
 import { CompareSlider } from "@/components/ui/CompareSlider";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
-import { ScrollSpine } from "@/components/ui/ScrollSpine";
+import { HedgeSpine } from "@/components/ui/HedgeSpine";
+import { FloatingCTA } from "@/components/ui/FloatingCTA";
 import { FilmStrip } from "@/components/ui/FilmStrip";
 
 export const metadata: Metadata = {
@@ -49,7 +50,8 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <Header />
-      <ScrollSpine />
+      <HedgeSpine />
+      <FloatingCTA />
 
       {/* ---- 1. Løftet ---- */}
       <HomeHero />
@@ -116,7 +118,7 @@ export default function HomePage() {
       </section>
 
       {/* ---- 7. Aftalen ---- */}
-      <section className="stcta">
+      <section className="stcta" id="bund-cta">
         <div className="stcta-inner">
           <ScrollReveal>
             <h2>Skal vi kigge forbi?</h2>

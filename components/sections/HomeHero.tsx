@@ -88,10 +88,10 @@ export function HomeHero() {
             transition={{ duration: 0.8, delay: 0.7, ease: [0.22, 1, 0.36, 1] }}
             style={{ display: "flex", gap: 12, flexWrap: "wrap", marginBottom: 40 }}
           >
-            <Link href="/kontakt" className="stb stb-primary">
+            <Link href="/kontakt" className="stb stb-primary stb-hero">
               Få et tilbud
               <span className="stb-icon" aria-hidden="true">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
               </span>
             </Link>
             <Link href="/#arbejdet" className="stb stb-ghost-light">Se arbejdet ske</Link>

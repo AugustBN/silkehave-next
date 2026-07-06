@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState, useEffect, useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const drop = [50,6, 58,18, 80,38, 80,60, 80,78, 67,92, 50,92, 33,92, 20,78, 20,60, 20,38, 42,18, 50,6];
 const leaf = [50,6, 50,12, 78,30, 78,50, 78,72, 65,92, 50,92, 35,92, 22,72, 22,50, 22,30, 50,12, 50,6];
@@ -123,24 +124,63 @@ export function Header({ isStatic = false }: { isStatic?: boolean }) {
         </button>
       </div>
 
-      {menuOpen && (
-        <div style={{ display: "flex", flexDirection: "column", gap: 4, padding: "16px 24px 24px", background: "var(--cream)", borderTop: "1px solid var(--stone-25)" }}>
-          {[
-            { href: "/#ydelser", label: "Ydelser" },
-            { href: "/om-os", label: "Om os" },
-            { href: "/omraade", label: "Område" },
-            { href: "/kontakt", label: "Kontakt" },
-          ].map((l) => (
-            <Link key={l.href} href={l.href} style={{ padding: "12px 0", color: "var(--bark)", textDecoration: "none", fontWeight: 500, borderBottom: "1px solid var(--stone-12)" }} onClick={() => setMenuOpen(false)}>
-              {l.label}
-            </Link>
-          ))}
-          <Link href="/kontakt" className="stb stb-primary" style={{ marginTop: 8, justifyContent: "center" }} onClick={() => setMenuOpen(false)}>Få et tilbud</Link>
-        </div>
-      )}
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -10, scale: 0.97 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -8, scale: 0.98 }}
+            transition={{ duration: 0.22, ease: [0.22, 1, 0.36, 1] }}
+            style={{
+              position: "absolute",
+              top: "calc(100% + 8px)",
+              right: 16,
+              width: "min(300px, calc(100vw - 32px))",
+              background: "var(--bone)",
+              borderRadius: "var(--radius-lg)",
+              border: "1px solid var(--stone-25)",
+              boxShadow: "var(--shadow-lifted)",
+              padding: 10,
+              transformOrigin: "top right",
+            }}
+          >
+            {[
+              { href: "/#ydelser", label: "Ydelser" },
+              { href: "/om-os", label: "Om os" },
+              { href: "/omraade", label: "Område" },
+              { href: "/kontakt", label: "Kontakt" },
+            ].map((l, i) => (
+              <motion.div
+                key={l.href}
+                initial={{ opacity: 0, x: 8 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.25, delay: 0.05 + i * 0.04, ease: [0.22, 1, 0.36, 1] }}
+              >
+                <Link
+                  href={l.href}
+                  className="sth-menuitem"
+                  style={{ display: "block", padding: "11px 14px", borderRadius: "var(--radius-md)", color: "var(--bark)", textDecoration: "none", fontWeight: 500, fontSize: 15 }}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {l.label}
+                </Link>
+              </motion.div>
+            ))}
+            <motion.div
+              initial={{ opacity: 0, y: 6 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.25, delay: 0.22, ease: [0.22, 1, 0.36, 1] }}
+              style={{ padding: "6px 4px 4px" }}
+            >
+              <Link href="/kontakt" className="stb stb-primary" style={{ width: "100%", justifyContent: "center", boxSizing: "border-box" }} onClick={() => setMenuOpen(false)}>Få et tilbud</Link>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       <style>{`
         .sth { position: fixed; top: 0; left: 0; right: 0; z-index: 50; transition: background 240ms cubic-bezier(0.22,1,0.36,1), backdrop-filter 240ms cubic-bezier(0.22,1,0.36,1); }
+        .sth-menuitem:hover { background: var(--sage-light); color: var(--forest); }
         .sth-navlink { display: inline-block; padding: 8px 14px; border-radius: 999px; line-height: 1.2; white-space: nowrap; transition: box-shadow 150ms cubic-bezier(0.22,1,0.36,1); }
         .sth-navlink:hover { box-shadow: 0 0 0 1.5px rgba(255,255,255,0.5), 0 0 12px 3px rgba(255,255,255,0.18); }
         .sth.is-solid .sth-navlink:hover { box-shadow: 0 0 0 1.5px rgba(47,140,74,0.4), 0 0 12px 3px rgba(47,140,74,0.14); }
