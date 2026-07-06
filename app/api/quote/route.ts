@@ -69,7 +69,9 @@ export async function POST(request: Request) {
   if (!name || (!email && !phone) || !address || !message) {
     return Response.json({ error: "Mangler påkrævede felter" }, { status: 400 });
   }
-  if (String(name).length > 200 || String(email).length > 200 ||
+  if (String(name).length > 200 ||
+      (email && String(email).length > 200) ||
+      (phone && String(phone).length > 50) ||
       String(address).length > 500 || String(message).length > 5000) {
     return Response.json({ error: "Felt er for langt" }, { status: 400 });
   }

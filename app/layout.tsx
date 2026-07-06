@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     default: "Haveservice i Silkeborg & Midtjylland | SilkeHave",
     template: "%s | SilkeHave",
   },
-  description: "Lokal have- og ejendomsservice i Midtjylland. Hækklipning, fliserens, græsslåning og snerydning i Silkeborg og omegn. Fast pris — ring 91 25 10 21.",
+  description: "Lokal have- og ejendomsservice i Midtjylland. Hækklipning, fliserens, vinduesrens og snerydning i Silkeborg og omegn. Fast pris, ring 91 25 10 21.",
   verification: {
     google: "eZf24AKNow0tCiqIBtMPKpLI1T-TVp1tMWVjfEj8w7s",
   },
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     siteName: "SilkeHave",
     url: "https://silkehave.dk",
     title: "Haveservice i Silkeborg & Midtjylland | SilkeHave",
-    description: "Lokal have- og ejendomsservice i Midtjylland. Hækklipning, fliserens, græsslåning og snerydning i Silkeborg og omegn. Fast pris — ring 91 25 10 21.",
+    description: "Lokal have- og ejendomsservice i Midtjylland. Hækklipning, fliserens, vinduesrens og snerydning i Silkeborg og omegn. Fast pris, ring 91 25 10 21.",
     images: [{ url: "/assets/photos/fliser-efter.jpg", width: 1200, height: 800 }],
   },
 };
@@ -43,7 +43,7 @@ const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   name: "SilkeHave",
-  description: "Have- og ejendomsservice i Silkeborg og Midtjylland. Hækklipning, fliserens, græsslåning, vinduesrens og snerydning.",
+  description: "Have- og ejendomsservice i Silkeborg og Midtjylland. Hækklipning, fliserens, vinduesrens og snerydning.",
   url: "https://silkehave.dk",
   telephone: "+4591251021",
   email: "KontaktSilkeHave@gmail.com",
@@ -60,7 +60,7 @@ const localBusinessSchema = {
   hasOfferCatalog: {
     "@type": "OfferCatalog",
     name: "Haveservice",
-    itemListElement: ["Hækklipning","Fliserens","Græsslåning","Vinduesrens","Snerydning","Haveordning"]
+    itemListElement: ["Hækklipning","Fliserens","Vinduesrens","Snerydning","Haveordning"]
       .map((name) => ({ "@type": "Offer", itemOffered: { "@type": "Service", name } })),
   },
   sameAs: ["https://www.facebook.com/profile.php?id=61574788933190"],

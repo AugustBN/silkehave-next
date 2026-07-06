@@ -4,11 +4,11 @@ import Image from "next/image";
 import { Header } from "@/components/layout/Header";
 
 export const metadata: Metadata = {
-  title: "Område — Haveservice i Silkeborg, Viborg & Midtjylland",
+  title: "Område: Silkeborg, Viborg, Skanderborg & Midtjylland",
   description: "SilkeHave kører i Silkeborg, Viborg, Skanderborg, Herning, Ikast, Ry og resten af Midtjylland. Hækklipning, fliserens og haveservice nær dig.",
   alternates: { canonical: "https://silkehave.dk/omraade" },
   openGraph: {
-    title: "Område — Haveservice i Silkeborg, Viborg & Midtjylland | SilkeHave",
+    title: "Område: Silkeborg, Viborg, Skanderborg & Midtjylland | SilkeHave",
     description: "SilkeHave kører i Silkeborg, Viborg, Skanderborg, Herning, Ikast, Ry og resten af Midtjylland.",
     images: [{ url: "/assets/photos/haek-klippet.jpg" }],
   },
@@ -24,7 +24,7 @@ export default function OmraadePage() {
         <div className="page-head-inner">
           <span className="stb-eyebrow">Område</span>
           <h1>Vi kører primært<br />i Midtjylland.</h1>
-          <p>Base i Silkeborg-området. Står du lige udenfor — ring og spørg, vi kan ofte godt komme alligevel.</p>
+          <p>Base i Silkeborg-området. Står du lige udenfor, så ring og spørg. Vi kan ofte godt komme alligevel.</p>
         </div>
       </section>
 
@@ -35,7 +35,7 @@ export default function OmraadePage() {
             <ul className="map-list">
               {towns.map((t) => <li key={t}>{t}</li>)}
             </ul>
-            <p className="map-note">Listen er ikke udtømmende — spørg hvis du er i tvivl.</p>
+            <p className="map-note">Listen er ikke udtømmende. Spørg, hvis du er i tvivl.</p>
             <p style={{ marginTop: 24 }}>
               <Link href="/kontakt" className="stb stb-primary">
                 Få et tilbud
