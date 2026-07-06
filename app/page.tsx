@@ -99,11 +99,6 @@ export default function HomePage() {
                   after: { src: "/assets/photos/haek-gang-efter.jpg", alt: "Havegang med glat klippet hæk" },
                   label: "Hækklipning · havegangen",
                 },
-                {
-                  before: { src: "/assets/photos/haek-legehus-foer.jpg", alt: "Hæk vokset op over legehuset" },
-                  after: { src: "/assets/photos/haek-legehus-efter.jpg", alt: "Hæk klippet ned ved legehuset" },
-                  label: "Hækklipning · ved legehuset",
-                },
               ]}
             />
           </ScrollReveal>
