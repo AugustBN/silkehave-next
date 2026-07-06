@@ -6,9 +6,8 @@ import { HomeHero } from "@/components/sections/HomeHero";
 import { ServiceTour } from "@/components/sections/ServiceTour";
 import { AreaSection } from "@/components/sections/AreaSection";
 import { ProcessSection } from "@/components/sections/ProcessSection";
-import { CompareSlider } from "@/components/ui/CompareSlider";
+import { BeforeAfterDeck } from "@/components/ui/BeforeAfterDeck";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
-import { HedgeSpine } from "@/components/ui/HedgeSpine";
 import { FloatingCTA } from "@/components/ui/FloatingCTA";
 import { FilmStrip } from "@/components/ui/FilmStrip";
 
@@ -50,7 +49,6 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <Header />
-      <HedgeSpine />
       <FloatingCTA />
 
       {/* ---- 1. Løftet ---- */}
@@ -79,9 +77,34 @@ export default function HomePage() {
           </ScrollReveal>
 
           <ScrollReveal delay={0.1}>
-            <CompareSlider
-              before={{ src: "/assets/photos/fliser-foer.jpg", alt: "Fliser før højtryksspuling" }}
-              after={{ src: "/assets/photos/fliser-efter.jpg", alt: "Fliser efter højtryksspuling" }}
+            <BeforeAfterDeck
+              pairs={[
+                {
+                  before: { src: "/assets/photos/haek-hjoerne-foer.jpg", alt: "Overgroet hækhjørne før klipning" },
+                  after: { src: "/assets/photos/haek-hjoerne-efter.jpg", alt: "Skarpt klippet hækhjørne" },
+                  label: "Hækklipning · hjørnet mod vejen",
+                },
+                {
+                  before: { src: "/assets/photos/fliser-foer.jpg", alt: "Fliser før højtryksspuling" },
+                  after: { src: "/assets/photos/fliser-efter.jpg", alt: "Fliser efter højtryksspuling" },
+                  label: "Fliserens · indkørsel",
+                },
+                {
+                  before: { src: "/assets/photos/haek-roser-foer.jpg", alt: "Hæk med pjusket top ved rosenbed" },
+                  after: { src: "/assets/photos/haek-roser-efter.jpg", alt: "Nyklippet hæk ved rosenbed" },
+                  label: "Hækklipning · ved rosenbedet",
+                },
+                {
+                  before: { src: "/assets/photos/haek-gang-foer.jpg", alt: "Havegang med udvokset hæk" },
+                  after: { src: "/assets/photos/haek-gang-efter.jpg", alt: "Havegang med glat klippet hæk" },
+                  label: "Hækklipning · havegangen",
+                },
+                {
+                  before: { src: "/assets/photos/haek-legehus-foer.jpg", alt: "Hæk vokset op over legehuset" },
+                  after: { src: "/assets/photos/haek-legehus-efter.jpg", alt: "Hæk klippet ned ved legehuset" },
+                  label: "Hækklipning · ved legehuset",
+                },
+              ]}
             />
           </ScrollReveal>
         </div>
