@@ -51,7 +51,8 @@
 
 /* ---- Reset ---- */
 *, *::before, *::after { box-sizing: border-box; }
-html { font-family: var(--font-sans); color: var(--bark); background: var(--cream); }
+html { font-family: var(--font-sans); color: var(--bark); background: var(--cream); scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 body { margin: 0; font-size: 16px; line-height: 1.45; -webkit-font-smoothing: antialiased; background: var(--cream); color: var(--bark); }
 img { max-width: 100%; display: block; }
 h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 600; color: var(--bark); margin: 0 0 16px; letter-spacing: -0.015em; line-height: 1.05; }

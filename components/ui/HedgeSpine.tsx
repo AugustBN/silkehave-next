@@ -67,7 +67,7 @@ export function HedgeSpine() {
         .hedgespine { position: fixed; top: 0; bottom: 0; left: 0; width: 36px; z-index: 30; pointer-events: none; }
         .hedgespine-fill { position: absolute; inset: 0; background-image: url("data:image/svg+xml,${TILE}"); background-repeat: repeat-y; background-size: 36px 120px; filter: drop-shadow(2px 0 6px rgba(19,52,36,0.25)); }
         .hedgespine-tip { position: absolute; left: 6px; }
-        @media (max-width: 1279px) { .hedgespine { display: none; } }
+        @media (max-width: 1023px) { .hedgespine { display: none; } }
       `}</style>
     </div>
   );
