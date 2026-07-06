@@ -59,10 +59,10 @@ export function BeforeAfterDeck({ pairs }: { pairs: ComparePair[] }) {
               <motion.div
                 key={p.after.src}
                 custom={dir}
-                initial={{ opacity: 0, x: dir * 90 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: dir * -90 }}
-                transition={{ duration: 0.45, ease }}
+                initial={{ opacity: 0, x: dir * 48, scale: 0.985, filter: "blur(7px)" }}
+                animate={{ opacity: 1, x: 0, scale: 1, filter: "blur(0px)" }}
+                exit={{ opacity: 0, x: dir * -48, scale: 0.985, filter: "blur(7px)" }}
+                transition={{ duration: 0.65, ease, opacity: { duration: 0.5, ease }, filter: { duration: 0.5, ease } }}
               >
                 <CompareSlider before={p.before} after={p.after} />
               </motion.div>
@@ -134,10 +134,10 @@ function PeekCard({ pair, side, onClick, show }: { pair: ComparePair; side: "lef
       <AnimatePresence mode="popLayout" initial={false}>
         <motion.div
           key={pair.after.src}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.4 }}
+          initial={{ opacity: 0, scale: 1.06 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 1.04 }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           style={{ position: "absolute", inset: 0 }}
         >
           <Image
