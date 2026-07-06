@@ -5,12 +5,14 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform, MotionConfig } from "framer-motion";
 
 const PHOTOS = [
-  { src: "/assets/photos/haek-stigen.jpg",      caption: "Hækklipning · liguster" },
-  { src: "/assets/photos/boegehaek-tarp.jpg",   caption: "Bøgehæk efter klip" },
-  { src: "/assets/photos/terrasse-parasol.jpg", caption: "Terrasse · sensommer" },
-  { src: "/assets/photos/hoejtryk-doer.jpg",    caption: "Højtryksspuling" },
-  { src: "/assets/photos/haek-knael-busk.jpg",  caption: "Detaljen i bunden" },
-  { src: "/assets/photos/haek-roekke-ny.jpg",   caption: "Ny række · klar til vækst" },
+  { src: "/assets/photos/haek-stigen.jpg",         caption: "Hækklipning · liguster" },
+  { src: "/assets/photos/arbejde-trimmer.jpg",     caption: "Toppen tages med maskine" },
+  { src: "/assets/photos/haek-skarpt-hjoerne.jpg", caption: "Skarpt hjørne mod vejen" },
+  { src: "/assets/photos/boegehaek-tarp.jpg",      caption: "Bøgehæk efter klip" },
+  { src: "/assets/photos/haek-ved-roser.jpg",      caption: "Nyklippet ved rosenbedet" },
+  { src: "/assets/photos/hoejtryk-doer.jpg",       caption: "Højtryksspuling" },
+  { src: "/assets/photos/arbejde-husmur.jpg",      caption: "Klipning ved husmuren" },
+  { src: "/assets/photos/haek-rosengang.jpg",      caption: "Rosengangen · efter" },
 ];
 
 // Filmstrimmel der driver sidelæns i takt med scroll

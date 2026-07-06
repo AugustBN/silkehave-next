@@ -89,6 +89,11 @@ export default function HomePage() {
                   after: { src: "/assets/photos/fliser-efter.jpg", alt: "Fliser efter højtryksspuling" },
                   label: "Fliserens · indkørsel",
                 },
+                {
+                  before: { src: "/assets/photos/haek-parkering-foer.jpg", alt: "Høj busket hæk ved parkeringsplads" },
+                  after: { src: "/assets/photos/haek-parkering-efter.jpg", alt: "Lav nyklippet hæk ved parkeringsplads" },
+                  label: "Hækklipning · ved parkeringen",
+                },
               ]}
             />
           </ScrollReveal>

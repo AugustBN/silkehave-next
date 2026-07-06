@@ -16,8 +16,8 @@ const STEPS = [
     n: "02",
     title: "Vi kommer og ordner det",
     body: "Til aftalt tid, med eget grej. Du behøver ikke være hjemme, og du skal ikke låne os noget.",
-    img: "/assets/photos/haek-stigen.jpg",
-    alt: "Hækklipning fra stige",
+    img: "/assets/photos/arbejde-trimmer.jpg",
+    alt: "Hækkens top klippes med maskine",
   },
   {
     n: "03",

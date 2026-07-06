@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion, MotionConfig } from "framer-motion";
+import { motion, AnimatePresence, MotionConfig } from "framer-motion";
 import { CompareSlider } from "@/components/ui/CompareSlider";
 
 export interface ComparePair {
@@ -10,56 +10,44 @@ export interface ComparePair {
   label?: string;
 }
 
-const spring = { type: "spring" as const, stiffness: 170, damping: 26, mass: 0.9 };
-
-// Kortstak af foer/efter-par. Kortene bag ligger let loeftet og vinklet,
-// og pilene drejer stakken videre som viserne paa et ur (drejepunkt under kortet).
+// Karrusel af foer/efter-par: det aktive kort glider til siden,
+// det naeste glider ind fra pilens retning. Roligt og forudsigeligt.
 export function BeforeAfterDeck({ pairs }: { pairs: ComparePair[] }) {
   const [active, setActive] = useState(0);
+  const [dir, setDir] = useState(1);
   const n = pairs.length;
-  const go = (d: number) => setActive((a) => (a + d + n) % n);
+  const go = (d: number) => { setDir(d); setActive((a) => (a + d + n) % n); };
+  const p = pairs[active];
 
   return (
     <MotionConfig reducedMotion="user">
-      <div style={{ position: "relative" }}>
-        <div style={{ position: "relative" }}>
-          {pairs.map((p, i) => {
-            const delta = (i - active + n) % n;
-            const conf =
-              delta === 0 ? { rotate: 0,   x: 0,  y: 0,   scale: 1,     opacity: 1, zIndex: 3 } :
-              delta === 1 ? { rotate: 3.5, x: 26, y: -22, scale: 0.965, opacity: 1, zIndex: 2 } :
-              delta === 2 ? { rotate: 6.5, x: 48, y: -40, scale: 0.93,  opacity: 0.85, zIndex: 1 } :
-                            { rotate: 9,   x: 64, y: -52, scale: 0.9,   opacity: 0, zIndex: 0 };
-            return (
-              <motion.div
-                key={p.after.src}
-                animate={conf}
-                transition={spring}
-                style={{
-                  position: i === 0 ? "relative" : "absolute",
-                  inset: i === 0 ? undefined : 0,
-                  transformOrigin: "50% 140%",
-                  pointerEvents: delta === 0 ? "auto" : "none",
-                }}
-                aria-hidden={delta !== 0}
-              >
-                <CompareSlider before={p.before} after={p.after} />
-              </motion.div>
-            );
-          })}
+      <div>
+        <div style={{ position: "relative", overflow: "hidden" }}>
+          <AnimatePresence mode="popLayout" initial={false} custom={dir}>
+            <motion.div
+              key={p.after.src}
+              custom={dir}
+              initial={{ opacity: 0, x: dir * 90 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: dir * -90 }}
+              transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <CompareSlider before={p.before} after={p.after} />
+            </motion.div>
+          </AnimatePresence>
         </div>
 
         {n > 1 && (
           <div style={{ display: "flex", alignItems: "center", gap: 16, marginTop: -24, marginBottom: 8 }}>
-            {pairs[active].label && (
+            {p.label && (
               <motion.span
-                key={pairs[active].label}
+                key={p.label}
                 initial={{ opacity: 0, y: 6 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
                 style={{ fontSize: 14, fontWeight: 600, color: "var(--forest)", letterSpacing: "-0.01em" }}
               >
-                {pairs[active].label}
+                {p.label}
               </motion.span>
             )}
             <span style={{ fontSize: 13, color: "var(--stone)", fontVariantNumeric: "tabular-nums" }}>
