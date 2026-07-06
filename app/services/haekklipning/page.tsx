@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { Header } from "@/components/layout/Header";
-import { ScrollVideo } from "@/components/ui/ScrollVideo";
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 export const metadata: Metadata = {
   title: "Hækklipning Silkeborg & Midtjylland",
@@ -38,10 +38,23 @@ export default function HaekklipningPage() {
         </div>
       </section>
 
-      <ScrollVideo
-        src="/assets/videos/haek-scroll-scrub.mp4"
-        poster="/assets/photos/haek-roekke-ny.jpg"
-      />
+      <section style={{ background: "var(--moss-deep)", padding: "0 0 96px" }}>
+        <div style={{ maxWidth: "var(--container-max)", margin: "0 auto", padding: "0 24px" }}>
+          <ScrollReveal>
+            <div style={{ borderRadius: "var(--radius-lg)", overflow: "hidden", boxShadow: "0 40px 80px -24px rgba(0,0,0,0.45)" }}>
+              <Image
+                src="/assets/photos/haek-roekke-ny.jpg"
+                alt="Nyklippet hækrække"
+                width={1600}
+                height={1000}
+                sizes="(max-width: 1200px) 100vw, 1152px"
+                style={{ width: "100%", aspectRatio: "16/9", objectFit: "cover", display: "block" }}
+                priority
+              />
+            </div>
+          </ScrollReveal>
+        </div>
+      </section>
 
       <article className="starticle">
         <div className="starticle-inner">

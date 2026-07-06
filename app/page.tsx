@@ -5,9 +5,9 @@ import { Header } from "@/components/layout/Header";
 import { HomeHero } from "@/components/sections/HomeHero";
 import { ServiceTour } from "@/components/sections/ServiceTour";
 import { AreaSection } from "@/components/sections/AreaSection";
+import { ProcessSection } from "@/components/sections/ProcessSection";
 import { CompareSlider } from "@/components/ui/CompareSlider";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
-import { ScrollVideo } from "@/components/ui/ScrollVideo";
 import { ScrollSpine } from "@/components/ui/ScrollSpine";
 import { FilmStrip } from "@/components/ui/FilmStrip";
 
@@ -54,24 +54,8 @@ export default function HomePage() {
       {/* ---- 1. Løftet ---- */}
       <HomeHero />
 
-      {/* ---- 2. Arbejdet: scroll styrer klippet ---- */}
-      <section id="arbejdet" style={{ background: "var(--moss-deep)" }}>
-        <div style={{ maxWidth: "var(--container-max)", margin: "0 auto", padding: "96px 24px 56px" }}>
-          <ScrollReveal>
-            <span className="stb-eyebrow" style={{ color: "rgba(245,241,232,0.6)" }}>Sådan ser det ud</span>
-            <h2 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(28px, 4vw, 48px)", fontWeight: 600, color: "var(--cream)", margin: 0, letterSpacing: "-0.015em", lineHeight: 1.08, maxWidth: 640 }}>
-              Rul, og klip hækken med os.
-            </h2>
-            <p style={{ fontSize: 18, lineHeight: 1.5, color: "rgba(245,241,232,0.8)", maxWidth: 520, marginTop: 12 }}>
-              Videoen følger din scroll. Sådan cirka føles det at få os forbi: roligt, grundigt og færdigt til tiden.
-            </p>
-          </ScrollReveal>
-        </div>
-        <ScrollVideo
-          src="/assets/videos/haek-scroll-scrub.mp4"
-          poster="/assets/photos/haek-roekke-ny.jpg"
-        />
-      </section>
+      {/* ---- 2. Arbejdet: tre trin, pinned gennemgang ---- */}
+      <ProcessSection />
 
       {/* ---- 3. Ydelserne ---- */}
       <ServiceTour />

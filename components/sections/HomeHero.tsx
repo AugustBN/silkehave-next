@@ -33,7 +33,12 @@ export function HomeHero() {
           overflow: "hidden",
         }}
       >
-        <motion.div style={{ position: "absolute", inset: "-12% 0 0 0", y: imgY }}>
+        <motion.div
+          style={{ position: "absolute", inset: "-12% 0 0 0", y: imgY }}
+          initial={{ scale: 1.07 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 2.2, ease: [0.22, 1, 0.36, 1] }}
+        >
           <Image
             src="/assets/photos/terrasse-parasol.jpg"
             alt=""

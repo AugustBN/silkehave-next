@@ -28,8 +28,14 @@ app/
 
 components/
   layout/               # Header (scroll-morph logo), Footer
-  ui/                   # CompareSlider (før/efter), ScrollReveal, ScrollVideo (lazy scrub)
+  sections/             # HomeHero, ProcessSection (pinned 3 trin), ServiceTour, AreaSection
+  ui/                   # CompareSlider, ScrollReveal, ScrollSpine, FilmStrip, ScrollVideo
 ```
+
+**ScrollVideo er parkeret:** komponenten ligger klar i `components/ui/ScrollVideo.tsx`,
+men bruges ingen steder. Når der findes rigtig video af en hæk der klippes, læg mp4'en i
+`public/assets/videos/` og montér `<ScrollVideo src=... poster=... />` igen (typisk på
+forsiden eller /services/haekklipning).
 
 ## Brand & copy
 

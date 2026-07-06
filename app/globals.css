@@ -62,6 +62,7 @@ p { margin: 0 0 16px; }
 a { color: var(--hedge); text-decoration-color: currentColor; text-decoration-thickness: 1px; text-underline-offset: 3px; transition: color var(--dur-fast) var(--ease-out); }
 a:hover { color: var(--forest); text-decoration-thickness: 2px; }
 ::selection { background: var(--hedge); color: var(--bone); }
+a:focus-visible, button:focus-visible, summary:focus-visible, [tabindex="0"]:focus-visible { outline: 2px solid var(--hedge); outline-offset: 3px; border-radius: 4px; }
 
 /* ---- Eyebrow ---- */
 .stb-eyebrow {
