@@ -82,7 +82,7 @@ export function Header({ isStatic = false }: { isStatic?: boolean }) {
           </span>
         </Link>
 
-        <nav style={{ display: "flex", gap: 28, marginLeft: "auto" }} className="sth-nav">
+        <nav style={{ display: "flex", alignItems: "center", gap: "clamp(6px, 1.6vw, 24px)", marginLeft: "auto" }} className="sth-nav">
           {[
             { href: "/#ydelser", label: "Ydelser" },
             { href: "/om-os", label: "Om os" },
@@ -105,7 +105,7 @@ export function Header({ isStatic = false }: { isStatic?: boolean }) {
             href="https://www.facebook.com/profile.php?id=61574788933190"
             target="_blank"
             rel="noopener noreferrer"
-            style={{ fontSize: 14, fontWeight: 500, color: solid ? "var(--bark)" : "var(--cream)", textDecoration: "none" }}
+            style={{ fontSize: 14, fontWeight: 500, color: solid ? "var(--bark)" : "var(--cream)", textDecoration: "none", whiteSpace: "nowrap" }}
           >
             facebook · silkehave
           </a>
@@ -141,10 +141,10 @@ export function Header({ isStatic = false }: { isStatic?: boolean }) {
 
       <style>{`
         .sth { position: fixed; top: 0; left: 0; right: 0; z-index: 50; transition: background 240ms cubic-bezier(0.22,1,0.36,1), backdrop-filter 240ms cubic-bezier(0.22,1,0.36,1); }
-        .sth-navlink { padding: 6px 10px; border-radius: 999px; transition: box-shadow 150ms cubic-bezier(0.22,1,0.36,1); }
+        .sth-navlink { display: inline-block; padding: 8px 14px; border-radius: 999px; line-height: 1.2; white-space: nowrap; transition: box-shadow 150ms cubic-bezier(0.22,1,0.36,1); }
         .sth-navlink:hover { box-shadow: 0 0 0 1.5px rgba(255,255,255,0.5), 0 0 12px 3px rgba(255,255,255,0.18); }
         .sth.is-solid .sth-navlink:hover { box-shadow: 0 0 0 1.5px rgba(47,140,74,0.4), 0 0 12px 3px rgba(47,140,74,0.14); }
-        @media (max-width: 880px) { .sth-nav, .sth-right { display: none !important; } .sth-burger { display: block !important; margin-left: auto; } }
+        @media (max-width: 1080px) { .sth-nav, .sth-right { display: none !important; } .sth-burger { display: block !important; margin-left: auto; } }
       `}</style>
     </header>
   );
