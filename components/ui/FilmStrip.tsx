@@ -91,7 +91,7 @@ export function FilmStrip() {
       >
         <motion.div ref={trackRef} style={{ x: baseX, display: "flex", gap: 14, width: "max-content", paddingLeft: 24 }}>
           {[...PHOTOS, ...PHOTOS].map((p, i) => (
-            <figure key={`${p.src}-${i}`} style={{ margin: 0, width: "clamp(180px, 22vw, 280px)", flex: "none" }}>
+            <figure key={`${p.src}-${i}`} style={{ margin: 0, width: "clamp(180px, 22vw, 330px)", flex: "none" }}>
               <div className="stfs-photo">
                 <Image
                   src={p.src}

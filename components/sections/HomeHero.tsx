@@ -63,7 +63,7 @@ export function HomeHero() {
             Have‑ og ejendomsservice · Midtjylland
           </motion.span>
 
-          <h1 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(38px, 7.2vw, 84px)", fontWeight: 600, letterSpacing: "-0.02em", lineHeight: 1.04, maxWidth: 820, margin: "0 0 20px", color: "var(--cream)" }}>
+          <h1 style={{ fontFamily: "var(--font-display)", fontSize: "clamp(38px, 6.4vw, 96px)", fontWeight: 600, letterSpacing: "-0.02em", lineHeight: 1.04, maxWidth: 1000, margin: "0 0 20px", color: "var(--cream)" }}>
             {["Hækken trænger til en tur.", "Vi kommer forbi."].map((t, i) => (
               <span key={t} style={{ display: "block", overflow: "hidden", paddingBottom: "0.08em", marginBottom: "-0.08em" }}>
                 <motion.span style={{ display: "block" }} variants={line} initial="hidden" animate="show" custom={i}>
@@ -77,7 +77,7 @@ export function HomeHero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.55, ease: [0.22, 1, 0.36, 1] }}
-            style={{ fontSize: "clamp(16px, 2.1vw, 19px)", lineHeight: 1.5, maxWidth: 540, margin: "0 0 28px", color: "rgba(245,241,232,0.92)" }}
+            style={{ fontSize: "clamp(16px, 2.1vw, 20px)", lineHeight: 1.5, maxWidth: 620, margin: "0 0 28px", color: "rgba(245,241,232,0.92)" }}
           >
             Vi klipper, samler op og kører væk. Du får en have, der ser ud som du vil have den, uden at du selv skal bruge weekenden på det.
           </motion.p>
