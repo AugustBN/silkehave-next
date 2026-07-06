@@ -89,16 +89,6 @@ export default function HomePage() {
                   after: { src: "/assets/photos/fliser-efter.jpg", alt: "Fliser efter højtryksspuling" },
                   label: "Fliserens · indkørsel",
                 },
-                {
-                  before: { src: "/assets/photos/haek-roser-foer.jpg", alt: "Hæk med pjusket top ved rosenbed" },
-                  after: { src: "/assets/photos/haek-roser-efter.jpg", alt: "Nyklippet hæk ved rosenbed" },
-                  label: "Hækklipning · ved rosenbedet",
-                },
-                {
-                  before: { src: "/assets/photos/haek-gang-foer.jpg", alt: "Havegang med udvokset hæk" },
-                  after: { src: "/assets/photos/haek-gang-efter.jpg", alt: "Havegang med glat klippet hæk" },
-                  label: "Hækklipning · havegangen",
-                },
               ]}
             />
           </ScrollReveal>
